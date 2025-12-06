@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benelux - Инновационные IT-решения</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="benelux.png" type="image/x-icon">
+  <link rel="shortcut icon" href="benelux.png" type="image/x-icon">
+</head>
+
+<body>
+      <header id="header">
+        <nav>
+            <div class="logo" onclick="scrollToTop()">BENELUX</div>
+            <div class="nav-center" id="navCenter">
+                <ul class="nav-links">
+                    <li><a href="#home" onclick="closeMenu()" data-i18n="nav_home">Главная</a></li>
+                    <li><a href="#services" onclick="closeMenu()" data-i18n="nav_services">Услуги</a></li>
+                    <li><a href="#projects" onclick="closeMenu()" data-i18n="nav_projects">Проекты</a></li>
+                    <li><a href="#team" onclick="closeMenu()" data-i18n="nav_team">Команда</a></li>
+                    <li><a href="#about" onclick="closeMenu()" data-i18n="nav_about">О нас</a></li>
+                    <li><a href="#testimonials" onclick="closeMenu()" data-i18n="nav_testimonials">Отзывы</a></li>
+                    <li><a href="#contact" onclick="closeMenu()" data-i18n="nav_contact">Контакты</a></li>
+                </ul>
+                <div class="language-switcher-mobile">
+                    <button class="lang-btn active" id="langRuMobile" onclick="changeLanguage('ru')">RU</button>
+                    <button class="lang-btn" id="langKkMobile" onclick="changeLanguage('kk')">ҚЗ</button>
+                    <button class="lang-btn" id="langEnMobile" onclick="changeLanguage('en')">EN</button>
+                </div>
+            </div>
+            <div class="language-switcher-desktop">
+                <button class="lang-btn active" id="langRu" onclick="changeLanguage('ru')">RU</button>
+                <button class="lang-btn" id="langKk" onclick="changeLanguage('kk')">ҚЗ</button>
+                <button class="lang-btn" id="langEn" onclick="changeLanguage('en')">EN</button>
+            </div>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1><span data-i18n="hero_title1">Инновационные</span> <span class="gradient-text" data-i18n="hero_title2">IT-решения</span><br><span data-i18n="hero_title3">для вашего бизнеса</span></h1>
+            <p data-i18n="hero_subtitle">Создаём современные цифровые продукты, которые трансформируют индустрии</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary" data-i18n="hero_btn1">Начать проект</a>
+                <a href="#services" class="btn-secondary" data-i18n="hero_btn2">Наши услуги</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title"><span data-i18n="services_title1">Наши</span> <span class="gradient-text" data-i18n="services_title2">услуги</span></h2>
+        <div class="services-grid">
+            <div class="service-card" onclick="openModal('web')">
+                <span class="service-icon">💻</span>
+                <h3 data-i18n="service_web_title">Веб-разработка</h3>
+                <p data-i18n="service_web_desc">Создаём высокопроизводительные веб-приложения и сайты с современным дизайном и безупречной функциональностью</p>
+                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
+            </div>
+            <div class="service-card" onclick="openModal('mobile')">
+                <span class="service-icon">📱</span>
+                <h3 data-i18n="service_mobile_title">Мобильные приложения</h3>
+                <p data-i18n="service_mobile_desc">Разрабатываем нативные и кроссплатформенные мобильные приложения для iOS и Android</p>
+                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
+            </div>
+            <div class="service-card" onclick="openModal('cloud')">
+                <span class="service-icon">☁️</span>
+                <h3 data-i18n="service_cloud_title">Облачные решения</h3>
+                <p data-i18n="service_cloud_desc">Проектируем и внедряем масштабируемую облачную инфраструктуру для вашего бизнеса</p>
+                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
+            </div>
+            <div class="service-card" onclick="openModal('ai')">
+                <span class="service-icon">🤖</span>
+                <h3 data-i18n="service_ai_title">AI & Machine Learning</h3>
+                <p data-i18n="service_ai_desc">Интегрируем искусственный интеллект и машинное обучение в ваши продукты</p>
+                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
+            </div>
+            <div class="service-card" onclick="openModal('security')">
+                <span class="service-icon">🔒</span>
+                <h3 data-i18n="service_security_title">Кибербезопасность</h3>
+                <p data-i18n="service_security_desc">Обеспечиваем комплексную защиту ваших данных и инфраструктуры</p>
+                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
+            </div>
+            <div class="service-card" onclick="openModal('analytics')">
+                <span class="service-icon">📊</span>
+                <h3 data-i18n="service_analytics_title">Аналитика данных</h3>
+                <p data-i18n="service_analytics_desc">Помогаем принимать обоснованные решения на основе анализа больших данных</p>
+                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
+            </div>
+        </div>
+    </section>
+
+        <section class="projects" id="projects">
+        <h2 class="section-title"><span data-i18n="projects_title1">Наши</span> <span class="gradient-text" data-i18n="projects_title2">проекты</span></h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterProjects('all')" data-i18n="filter_all">Все проекты</button>
+            <button class="filter-btn" onclick="filterProjects('web')" data-i18n="filter_web">Веб-разработка</button>
+            <button class="filter-btn" onclick="filterProjects('mobile')" data-i18n="filter_mobile">Мобильные</button>
+            <button class="filter-btn" onclick="filterProjects('cloud')" data-i18n="filter_cloud">Облачные</button>
+            <button class="filter-btn" onclick="filterProjects('ai')" data-i18n="filter_ai">AI/ML</button>
+            <button class="filter-btn" onclick="filterProjects('bot')" data-i18n="filter_bot">Боты</button>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card" data-category="web">
+                <div class="project-image">
+                    <img src="images/1.png" alt="Фото">
+                </div>
+                <div class="project-info">
+                    <span class="project-category" data-i18n="filter_web">Веб-разработка</span>
+                    <h3>Ai NFT Studio</h3>
+                    <p data-i18n="project_fintech_desc">NFT-платформа с автоматической генерацией изображений через ИИ</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Solana</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="mobile">
+                <div class="project-image">
+                    <img src="images/2.png" alt="Фото">
+                </div>
+                <div class="project-info">
+                    <span class="project-category" data-i18n="filter_mobile">Мобильные</span>
+                    <h3>Iron Bars</h3>
+                    <p data-i18n="project_fitness_desc">Мобильное приложение для отслеживания тренировок с AI-тренером</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="web">
+                <div class="project-image">
+                    <img src="images/5.png" alt="Фото">
+                </div>
+                <div class="project-info">
+                    <span class="project-category" data-i18n="filter_web">Веб-разработка</span>
+                    <h3>Ai-LessonPlan</h3>
+                    <p data-i18n="project_dashboard_desc">Платформа для генерации учебного плана для проведения занятий ученикам и студентам</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Streamlit</span>
+                        <span class="tech-tag">Google Ai</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team" id="team">
+        <h2 class="section-title"><span data-i18n="team_title1">Наша</span> <span class="gradient-text" data-i18n="team_title2">команда</span></h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="images/team1.jpg" alt="">
+                </div>
+                <div class="team-name" data-i18n="team_member1_name">Кирилл Пилипенко</div>
+                <div class="team-role" data-i18n="team_member1_role">CEO & Основатель</div>
+                <p class="team-bio" data-i18n="team_member1_bio">Определяет вектор развития BENELUX и формирует команду экспертов для реализации инновационных проектов.</p>
+                <div class="team-social">
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="images/team2.jpg" alt="">
+                </div>
+                <div class="team-name" data-i18n="team_member2_name">Ерлан Аймуканов</div>
+                <div class="team-role" data-i18n="team_member2_role">Со-руководитель</div>
+                <p class="team-bio" data-i18n="team_member2_bio">Отвечает за эффективность внутренних процессов и успешное завершение всех ключевых проектов.</p>
+                <div class="team-social">
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="images/team3.jpg" alt="">
+                </div>
+                <div class="team-name" data-i18n="team_member3_name">Владислав Тугуши</div>
+                <div class="team-role" data-i18n="team_member3_role">Специалист по кибербезопасности</div>
+                <p class="team-bio" data-i18n="team_member3_bio">Обеспечивает комплексную защиту всех цифровых активов клиентов и инфраструктуры компании.</p>
+                <div class="team-social">
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="images/team4.jpg" alt="">
+                </div>
+                <div class="team-name" data-i18n="team_member4_name">Никита Мальцев</div>
+                <div class="team-role" data-i18n="team_member4_role">Специалист по ИИ</div>
+                <p class="team-bio" data-i18n="team_member4_bio">Разрабатывает и внедряет нейронные сети для оптимизации бизнес-процессов и создания новых продуктов.</p>
+                <div class="team-social">
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="images/team5.jpeg" alt="">
+                </div>
+                <div class="team-name" data-i18n="team_member5_name">Карабура Айтжанов</div>
+                <div class="team-role" data-i18n="team_member5_role">Мобилограф</div>
+                <p class="team-bio" data-i18n="team_member5_bio">Создает высококачественный видеоконтент, отражающий экспертизу и жизнь команды BENELUX.</p>
+                <div class="team-social">
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="images/team6.jpg" alt="">
+                </div>
+                <div class="team-name" data-i18n="team_member6_name">Мариам Жанузакова</div>
+                <div class="team-role" data-i18n="team_member6_role">Дизайнер</div>
+                <p class="team-bio" data-i18n="team_member6_bio">Превращает сложные идеи в интуитивно понятные и эстетически привлекательные интерфейсы.</p>
+                <div class="team-social">
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="images/team7.jpeg" alt="">
+                </div>
+                <div class="team-name" data-i18n="team_member7_name">Наталья Ищенко</div>
+                <div class="team-role" data-i18n="team_member7_role">Тестировщик</div>
+                <p class="team-bio" data-i18n="team_member7_bio">Обеспечивает безупречную работу продукта, выявляя и устраняя критические ошибки до релиза.</p>
+                <div class="team-social">
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="images/team8.jpeg" alt="">
+                </div>
+                <div class="team-name" data-i18n="team_member8_name">Салтанат Еркингали</div>
+                <div class="team-role" data-i18n="team_member8_role">SMM-специалист</div>
+                <p class="team-bio" data-i18n="team_member8_bio">Управляет присутствием BENELUX в социальных сетях, строит сообщество и привлекает целевую аудиторию.</p>
+                <div class="team-social">
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">
+                    <img src="images/team9.jpg" alt="">
+                </div>
+                <div class="team-name" data-i18n="team_member9_name">Артем Курсаев</div>
+                <div class="team-role" data-i18n="team_member9_role">Backend-разработчик</div>
+                <p class="team-bio" data-i18n="team_member9_bio">Отвечает за проектирование баз данных и оптимизацию серверной логики для поддержания высокой масштабируемости проектов.</p>
+                <div class="team-social">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2><span data-i18n="about_title1">О компании</span> <span class="gradient-text">Benelux</span></h2>
+                <p data-i18n="about_text1">Мы — команда профессионалов, специализирующихся на разработке инновационных IT-решений. Наша миссия — помогать компаниям достигать своих целей через технологии.</p>
+                <p data-i18n="about_text2">С момента основания мы реализовали более 150 успешных проектов для клиентов по всему миру, от стартапов до крупных корпораций.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label" data-i18n="stat_projects">Завершённых проектов</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label" data-i18n="stat_experts">Экспертов в команде</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label" data-i18n="stat_clients">Довольных клиентов</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label" data-i18n="stat_support">Поддержка</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title"><span data-i18n="testimonials_title1">Что говорят</span> <span class="gradient-text" data-i18n="testimonials_title2">наши клиенты</span></h2>
+        <div class="testimonials-container">
+            <button class="slider-arrow prev" onclick="changeTestimonial(-1)">←</button>
+            <button class="slider-arrow next" onclick="changeTestimonial(1)">→</button>
+            <div class="testimonials-wrapper">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote" data-i18n="testimonial1_text">
+                            Benelux превзошли все наши ожидания! Они создали платформу для нашего финтех-стартапа за 3 месяца. Профессионализм, внимание к деталям и отличная коммуникация на протяжении всего проекта.
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">АК</div>
+                            <div class="author-info">
+                                <div class="author-name" data-i18n="testimonial1_name">Алексей Ковалёв</div>
+                                <div class="author-position">CEO</div>
+                                <div class="author-company">FinanceFlow</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote" data-i18n="testimonial2_text">
+                            Работа с командой Benelux - это настоящее удовольствие. Они не просто выполнили техническое задание, а предложили инновационные решения, которые значительно улучшили наш продукт.
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">МС</div>
+                            <div class="author-info">
+                                <div class="author-name" data-i18n="testimonial2_name">Мария Смирнова</div>
+                                <div class="author-position">CTO</div>
+                                <div class="author-company">TechVision</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote" data-i18n="testimonial3_text">
+                            Миграция нашей инфраструктуры в облако прошла безупречно благодаря экспертизе Benelux. Производительность выросла на 300%, а расходы снизились на 40%. Рекомендую!
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">ДП</div>
+                            <div class="author-info">
+                                <div class="author-name" data-i18n="testimonial3_name">Дмитрий Петров</div>
+                                <div class="author-position">IT Director</div>
+                                <div class="author-company">GlobalTrade Inc</div>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button class="slider-dot active" onclick="goToTestimonial(0)"></button>
+                <button class="slider-dot" onclick="goToTestimonial(1)"></button>
+                <button class="slider-dot" onclick="goToTestimonial(2)"></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="section-title"><span data-i18n="contact_title1">Свяжитесь</span> <span class="gradient-text" data-i18n="contact_title2">с нами</span></h2>
+        <p style="color: #b0b0b0; margin-bottom: 20px;" data-i18n="contact_subtitle">Готовы начать ваш проект? Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label data-i18n="form_name">Имя</label>
+                <input type="text" id="name" required placeholder="">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label data-i18n="form_phone">Номер телефон</label>
+                <input type="phone" id="phone" required placeholder="">
+            </div>
+            <div class="form-group">
+                <label data-i18n="form_company">Компания</label>
+                <input type="text" id="company" placeholder="">
+            </div>
+            <div class="form-group">
+                <label data-i18n="form_message">Сообщение</label>
+                <textarea id="message" required placeholder=""></textarea>
+            </div>
+            <button type="submit" class="btn-primary" data-i18n="form_submit">Отправить заявку</button>
+        </form>
+        <div class="success-message" id="successMessage" data-i18n="form_success">
+            ✅ Спасибо за заявку! Мы свяжемся с вами в ближайшее время.
+        </div>
+    </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="logo" style="font-size: 32px; margin-bottom: 20px;">BENELUX</div>
+      <p style="color: #b0b0b0;">Инновационные IT-решения для вашего бизнеса</p>
+      <div class="social-links">
+        <a href="#" onclick="showNotification('Facebook скоро!')">📘</a>
+        <a href="#" onclick="showNotification('Twitter скоро!')">🐦</a>
+        <a href="#" onclick="showNotification('LinkedIn скоро!')">💼</a>
+        <a href="#" onclick="showNotification('Instagram скоро!')">📸</a>
+      </div>
+      <p style="color: #666; margin-top: 30px;">© 2025 Benelux. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="serviceModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('serviceModal')">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="notification" id="notification"></div>
+  <script src="JS/main.js"></script>
+</body>
+
+</html>
