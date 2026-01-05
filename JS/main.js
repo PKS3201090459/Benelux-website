@@ -663,3 +663,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// FAQ Accordion
+function toggleFaq(element) {
+    const faqItem = element.parentElement;
+    faqItem.classList.toggle('active');
+}
+
+// Появление кнопки "Наверх" при скролле
+window.addEventListener('scroll', () => {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    if (window.scrollY > 500) {
+        scrollTopBtn.classList.add('show');
+    } else {
+        scrollTopBtn.classList.remove('show');
+    }
+});
+
+// Плавный скролл наверх (если функции еще нет)
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
