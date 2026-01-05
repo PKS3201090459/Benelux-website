@@ -307,6 +307,35 @@
         </div>
     </section>
 
+    <section class="process" id="process">
+        <h2 class="section-title">
+            <span data-i18n="process_title1">Наш</span>
+            <span class="gradient-text" data-i18n="process_title2">процесс</span>
+        </h2>
+        <div class="process-steps">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <h3 data-i18n="step1_title">Аналитика</h3>
+                <p data-i18n="step1_desc">Изучаем ваш бизнес, конкурентов и формируем детальное ТЗ.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <h3 data-i18n="step2_title">Прототип</h3>
+                <p data-i18n="step2_desc">Создаем визуальную структуру и логику взаимодействия (UX/UI).</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <h3 data-i18n="step3_title">Разработка</h3>
+                <p data-i18n="step3_desc">Пишем чистый код и настраиваем серверную часть проекта.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">04</div>
+                <h3 data-i18n="step4_title">Запуск</h3>
+                <p data-i18n="step4_desc">Тестируем, переносим на боевой сервер и обучаем вашу команду.</p>
+            </div>
+        </div>
+    </section>
+
     <!--<section class="testimonials" id="testimonials">
         <h2 class="section-title"><span data-i18n="testimonials_title1">Что говорят</span> <span class="gradient-text"
                 data-i18n="testimonials_title2">наши клиенты</span></h2>
@@ -371,6 +400,70 @@
         </div>
     </section>-->
 
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">
+                <span data-i18n="faq_title">Часто задаваемые вопросы</span>
+            </h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-i18n="faq_q1">Сколько времени занимает разработка сайта?</span>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p data-i18n="faq_a1">
+                                Сроки зависят от сложности проекта. Лендинг мы создаем от 7 дней,
+                                а сложный корпоративный портал или интернет-магазин — от 1 месяца.
+                                Каждый этап фиксируется в договоре.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-i18n="faq_q2">Предоставляете ли вы поддержку после запуска?</span>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p data-i18n="faq_a2">
+                                Да, мы не бросаем проекты. В стоимость включена техническая поддержка
+                                в течение первого месяца, а также мониторинг серверов 24/7 и оперативное
+                                исправление любых ошибок.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-i18n="faq_q3">Как происходит оплата услуг?</span>
+                        <div class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p data-i18n="faq_a3">
+                                Обычно мы работаем по системе 50/50: предоплата перед стартом
+                                и финальный расчет после приема всех работ. Возможна поэтапная
+                                оплата для крупных проектов.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contact">
         <h2 class="section-title"><span data-i18n="contact_title1">Свяжитесь</span> <span class="gradient-text"
                 data-i18n="contact_title2">с нами</span></h2>
@@ -405,18 +498,60 @@
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="logo" style="font-size: 32px; margin-bottom: 20px;">BENELUX</div>
-            <p style="color: #b0b0b0;">Инновационные IT-решения для вашего бизнеса</p>
-            <div class="social-links">
-                <a href="https://t.me/beneluxtech" onclick="showNotification('Мы в Telegram!')">
-                    <i class="fa-brands fa-telegram"></i>
-                </a>
-                <a href="https://www.instagram.com/benelux_aqtobe?igsh=MWJ3NTNwcTJ2bHpjaw==" onclick="showNotification('Мы в Instagram!')">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="logo footer-logo">BENELUX</div>
+                <p class="footer-description">
+                    Мы создаем цифровые решения будущего. Инновационный подход к каждому проекту, от концепции до
+                    реализации.
+                </p>
             </div>
-            <p style="color: #666; margin-top: 30px;">© 2025 Benelux. Все права защищены.</p>
+
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="#hero">Главная</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#projects">Портфолио</a></li>
+                    <li><a href="#team">Команда</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Услуги</h4>
+                <ul>
+                    <li><a href="#services">Веб-разработка</a></li>
+                    <li><a href="#services">UI/UX Дизайн</a></li>
+                    <li><a href="#services">Маркетинг</a></li>
+                    <li><a href="#services">Брендинг</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Связаться</h4>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>benelux.aktobe@bk.ru</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+7 (702) 947 3930</span>
+                </div>
+                <div class="footer-socials">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2026 Benelux. Все права защищены.
+            </div>
+            <div class="footer-legal">
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Условия использования</a>
+            </div>
         </div>
     </footer>
 
@@ -428,6 +563,14 @@
     </div>
 
     <div class="notification" id="notification"></div>
+    <div class="floating-actions">
+        <a href="https://wa.me/77029473930" class="float-btn whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button class="float-btn scroll-top" id="scrollTopBtn" onclick="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
     <script src="JS/main.js"></script>
 </body>
 
