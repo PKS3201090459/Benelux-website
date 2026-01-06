@@ -496,7 +496,7 @@ function updateTestimonialSlider() {
 }
 
 // Auto-play testimonials
-let testimonialInterval = setInterval(() => {
+/* let testimonialInterval = setInterval(() => {
     changeTestimonial(1);
 }, 7000);
 
@@ -509,7 +509,7 @@ document.querySelector('.testimonials-wrapper')?.addEventListener('mouseleave', 
     testimonialInterval = setInterval(() => {
         changeTestimonial(1);
     }, 7000);
-});
+});*/
 
 // Form submission
 function handleSubmit(e) {
