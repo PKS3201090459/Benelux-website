@@ -461,7 +461,7 @@ function filterProjects(category) {
 
 // Testimonials Slider
 let currentTestimonial = 0;
-const totalTestimonials = 3;
+const totalTestimonials = 2;
 
 function changeTestimonial(direction) {
     currentTestimonial += direction;
@@ -496,7 +496,7 @@ function updateTestimonialSlider() {
 }
 
 // Auto-play testimonials
-/* let testimonialInterval = setInterval(() => {
+let testimonialInterval = setInterval(() => {
     changeTestimonial(1);
 }, 7000);
 
@@ -509,7 +509,7 @@ document.querySelector('.testimonials-wrapper')?.addEventListener('mouseleave', 
     testimonialInterval = setInterval(() => {
         changeTestimonial(1);
     }, 7000);
-});*/
+});
 
 // Form submission
 function handleSubmit(e) {
