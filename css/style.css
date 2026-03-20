@@ -201,7 +201,7 @@ nav {
     .nav-links {
         flex-direction: column;
         width: 100%;
-        gap: 30px;
+        gap: 20px;
         direction: rtl;
     }
 
