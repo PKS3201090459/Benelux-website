@@ -11,25 +11,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ0NDC5FB7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        
+
         gtag('config', 'G-LQ0NDC5FB7');
     </script>
 </head>
 
 <body>
+    <canvas id="fx-canvas" aria-hidden="true"></canvas>
+    <div class="fx-vignette" aria-hidden="true"></div>
     <header id="header">
         <nav>
-            <div class="logo" onclick="scrollToTop()">BENELUX</div>
+            <div class="logo" onclick="scrollToTop()">
+                <img src="benelux.png" alt="Benelux Logo" class="nav-logo">
+                <span>Benelux</span>
+            </div>
             <div class="nav-center" id="navCenter">
                 <ul class="nav-links">
                     <li><a href="#home" onclick="closeMenu()" data-i18n="nav_home">Главная</a></li>
                     <li><a href="#services" onclick="closeMenu()" data-i18n="nav_services">Услуги</a></li>
+                    <li><a href="#map" onclick="closeMenu()" data-i18n="nav_map">Карта</a></li>
                     <li><a href="#projects" onclick="closeMenu()" data-i18n="nav_projects">Проекты</a></li>
                     <li><a href="#team" onclick="closeMenu()" data-i18n="nav_team">Команда</a></li>
                     <li><a href="#about" onclick="closeMenu()" data-i18n="nav_about">О нас</a></li>
@@ -59,13 +66,43 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1><span data-i18n="hero_title1">Инновационные</span> <span class="gradient-text"
-                    data-i18n="hero_title2">IT-решения</span><br><span data-i18n="hero_title3">для вашего бизнеса</span>
-            </h1>
-            <p data-i18n="hero_subtitle">Создаём современные цифровые продукты, которые трансформируют индустрии</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn-primary" data-i18n="hero_btn1">Начать проект</a>
-                <a href="#services" class="btn-secondary" data-i18n="hero_btn2">Наши услуги</a>
+            <div class="hero-layout">
+                <div class="hero-copy">
+                    <div class="hero-eyebrow" data-i18n="hero_eyebrow">Enterprise-ready IT services for bold brands
+                    </div>
+                    <h1>
+                        <span data-i18n="hero_title1">Инновационные</span>
+                        <span class="gradient-text" data-i18n="hero_title2">IT-решения</span><br>
+                        <span data-i18n="hero_title3">для вашего бизнеса</span>
+                    </h1>
+                    <p data-i18n="hero_subtitle">Создаём современные цифровые продукты, которые трансформируют индустрии
+                    </p>
+                    <div class="hero-highlights">
+                        <span>Архитектура класса Enterprise</span>
+                        <span>Безопасность на каждом уровне</span>
+                        <span>Оперативная поддержка 24/7</span>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn-primary" data-i18n="hero_btn1">Начать проект</a>
+                        <a href="#services" class="btn-secondary" data-i18n="hero_btn2">Наши услуги</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="visual-glow"></div>
+                    <div class="visual-stack">
+                        <div class="visual-card visual-card--top">
+                            <div class="visual-badge">
+                                <img src="benelux.png" alt="Benelux" class="visual-logo">
+                            </div>
+                            <div class="visual-lines">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="visual-card visual-card--mid"></div>
+                        <div class="visual-card visual-card--bot"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -74,42 +111,60 @@
         <h2 class="section-title"><span data-i18n="services_title1">Наши</span> <span class="gradient-text"
                 data-i18n="services_title2">услуги</span></h2>
         <div class="services-grid">
-            <div class="service-card" onclick="openModal('web')">
-                <span class="service-icon">💻</span>
+            <div class="service-card service-card--feature" onclick="openModal('web')">
+                <div class="service-top">
+                    <span class="service-badge">01</span>
+                    <span class="service-icon">💻</span>
+                </div>
                 <h3 data-i18n="service_web_title">Веб-разработка</h3>
                 <p data-i18n="service_web_desc">Создаём высокопроизводительные веб-приложения и сайты с современным
                     дизайном и безупречной функциональностью</p>
                 <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
             </div>
-            <div class="service-card" onclick="openModal('mobile')">
-                <span class="service-icon">📱</span>
-                <h3 data-i18n="service_mobile_title">Мобильные приложения</h3>
-                <p data-i18n="service_mobile_desc">Разрабатываем нативные и кроссплатформенные мобильные приложения для
-                    iOS и Android</p>
-                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
-            </div>
-            <div class="service-card" onclick="openModal('cloud')">
-                <span class="service-icon">☁️</span>
-                <h3 data-i18n="service_cloud_title">Облачные решения</h3>
-                <p data-i18n="service_cloud_desc">Проектируем и внедряем масштабируемую облачную инфраструктуру для
-                    вашего бизнеса</p>
-                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
-            </div>
-            <div class="service-card" onclick="openModal('ai')">
-                <span class="service-icon">🤖</span>
+            <div class="service-card service-card--small" onclick="openModal('ai')">
+                <div class="service-top">
+                    <span class="service-badge">02</span>
+                    <span class="service-icon">🤖</span>
+                </div>
                 <h3 data-i18n="service_ai_title">AI & Machine Learning</h3>
                 <p data-i18n="service_ai_desc">Интегрируем искусственный интеллект и машинное обучение в ваши продукты
                 </p>
                 <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
             </div>
-            <div class="service-card" onclick="openModal('security')">
-                <span class="service-icon">🔒</span>
+            <div class="service-card service-card--medium" onclick="openModal('cloud')">
+                <div class="service-top">
+                    <span class="service-badge">03</span>
+                    <span class="service-icon">☁️</span>
+                </div>
+                <h3 data-i18n="service_cloud_title">Облачные решения</h3>
+                <p data-i18n="service_cloud_desc">Проектируем и внедряем масштабируемую облачную инфраструктуру для
+                    вашего бизнеса</p>
+                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
+            </div>
+            <div class="service-card service-card--wide" onclick="openModal('mobile')">
+                <div class="service-top">
+                    <span class="service-badge">04</span>
+                    <span class="service-icon">📱</span>
+                </div>
+                <h3 data-i18n="service_mobile_title">Мобильные приложения</h3>
+                <p data-i18n="service_mobile_desc">Разрабатываем нативные и кроссплатформенные мобильные приложения для
+                    iOS и Android</p>
+                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
+            </div>
+            <div class="service-card service-card--small" onclick="openModal('security')">
+                <div class="service-top">
+                    <span class="service-badge">05</span>
+                    <span class="service-icon">🔒</span>
+                </div>
                 <h3 data-i18n="service_security_title">Кибербезопасность</h3>
                 <p data-i18n="service_security_desc">Обеспечиваем комплексную защиту ваших данных и инфраструктуры</p>
                 <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
             </div>
-            <div class="service-card" onclick="openModal('analytics')">
-                <span class="service-icon">📊</span>
+            <div class="service-card service-card--medium" onclick="openModal('analytics')">
+                <div class="service-top">
+                    <span class="service-badge">06</span>
+                    <span class="service-icon">📊</span>
+                </div>
                 <h3 data-i18n="service_analytics_title">Аналитика данных</h3>
                 <p data-i18n="service_analytics_desc">Помогаем принимать обоснованные решения на основе анализа больших
                     данных</p>
@@ -118,17 +173,74 @@
         </div>
     </section>
 
+    <section class="map-section" id="map">
+        <h2 class="section-title" data-i18n="map_title">Карта</h2>
+        <p class="map-subtitle" data-i18n="map_subtitle">Наше присутствие в Казахстане</p>
+        <div class="map-layout">
+            <div class="map-visual" aria-label="Интерактивная карта Казахстана">
+                <div id="kazakhstanMap" class="leaflet-map"></div>
+                <!-- Interactive Info Card -->
+                <div class="city-info-card" id="cityCard">
+                    <button class="city-card-close" id="cityCardClose"><i class="fas fa-times"></i></button>
+                    <div class="city-card-header">
+                        <img src="" alt="City photo" class="city-card-photo" id="cityCardPhoto">
+                        <div class="city-card-fallback" id="cityCardFallback">
+                            <i class="fas fa-building"></i>
+                        </div>
+                    </div>
+                    <div class="city-card-body">
+                        <h3 id="cityCardName" class="city-card-name"></h3>
+                        <p class="city-card-detail" id="cityCardAddress"></p>
+                        <p class="city-card-detail" id="cityCardPhone"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-info">
+                <div class="map-info-grid">
+                    <div class="map-card">
+                        <h3 data-i18n="map_city_aktobe">Актобе</h3>
+                        <p data-i18n="map_aktobe_desc">Главный офис компании</p>
+                    </div>
+                    <div class="map-card">
+                        <h3 data-i18n="map_city_kostanay">Костанай</h3>
+                        <p data-i18n="map_kostanay_desc">Региональное представительство</p>
+                    </div>
+                    <div class="map-card">
+                        <h3 data-i18n="map_work_title">Работаем по всему Казахстану</h3>
+                        <p data-i18n="map_work_desc">Локальная поддержка клиентов</p>
+                    </div>
+                    <div class="map-card map-stats">
+                        <div class="stat-chip"><span>2</span> <small data-i18n="map_stat_offices">офиса</small></div>
+                        <div class="stat-chip"><span>15+</span> <small data-i18n="map_stat_clients">клиентов</small>
+                        </div>
+                        <div class="stat-chip"><span>100+</span> <small data-i18n="map_stat_projects">проектов</small>
+                        </div>
+                        <div class="stat-chip"><span>24/7</span> <small data-i18n="map_stat_support">поддержка</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-cta">
+                    <h3 data-i18n="map_cta_title">Свяжитесь с ближайшим офисом</h3>
+                    <a href="#contact" class="btn-primary" data-i18n="map_cta_btn">Получить консультацию</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="projects" id="projects">
         <h2 class="section-title"><span data-i18n="projects_title1">Наши</span> <span class="gradient-text"
                 data-i18n="projects_title2">проекты</span></h2>
         <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterProjects('all')" data-i18n="filter_all">Все
+            <button class="filter-btn active" onclick="filterProjects(event, 'all')" data-i18n="filter_all">Все
                 проекты</button>
-            <button class="filter-btn" onclick="filterProjects('web')" data-i18n="filter_web">Веб-разработка</button>
-            <button class="filter-btn" onclick="filterProjects('mobile')" data-i18n="filter_mobile">Мобильные</button>
-            <!--<button class="filter-btn" onclick="filterProjects('cloud')" data-i18n="filter_cloud">Облачные</button>
-            <button class="filter-btn" onclick="filterProjects('ai')" data-i18n="filter_ai">AI/ML</button>
-            <button class="filter-btn" onclick="filterProjects('bot')" data-i18n="filter_bot">Боты</button>-->
+            <button class="filter-btn" onclick="filterProjects(event, 'web')"
+                data-i18n="filter_web">Веб-разработка</button>
+            <button class="filter-btn" onclick="filterProjects(event, 'mobile')"
+                data-i18n="filter_mobile">Мобильные</button>
+            <!--<button class="filter-btn" onclick="filterProjects(event, 'cloud')" data-i18n="filter_cloud">Облачные</button>
+            <button class="filter-btn" onclick="filterProjects(event, 'ai')" data-i18n="filter_ai">AI/ML</button>
+            <button class="filter-btn" onclick="filterProjects(event, 'bot')" data-i18n="filter_bot">Боты</button>-->
         </div>
         <div class="projects-grid">
             <div class="project-card" data-category="web">
@@ -138,7 +250,8 @@
                 <div class="project-info">
                     <span class="project-category" data-i18n="filter_web">Веб-разработка</span>
                     <h3>Сайт компании Kasip</h3>
-                    <p data-i18n="project_fintech_desc">Сайт для бизнес парка Kasip со встроенной платформой для прохождения курсов по бизнесу
+                    <p data-i18n="project_fintech_desc">Сайт для бизнес парка Kasip со встроенной платформой для
+                        прохождения курсов по бизнесу
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">PHP</span>
@@ -186,7 +299,7 @@
                 <div class="project-info">
                     <span class="project-category" data-i18n="filter_mobile">Мобильные</span>
                     <h3>QazaqSteps</h3>
-                    <p data-i18n="project_fitness_desc">Мобильное приложение для туризма по городам 
+                    <p data-i18n="project_fitness_desc">Мобильное приложение для туризма по городам
                         Актобе и Костанай</p>
                     <div class="project-tech">
                         <span class="tech-tag">React Native</span>
@@ -201,7 +314,7 @@
                 <div class="project-info">
                     <span class="project-category" data-i18n="filter_web">Веб-разработка</span>
                     <h3>ИИ-консультант "Абитуриент"</h3>
-                    <p data-i18n="project_dashboard_desc">Голосовой ИИ-ассистент для приемной комиссии 
+                    <p data-i18n="project_dashboard_desc">Голосовой ИИ-ассистент для приемной комиссии
                         университета Жубанова</p>
                     <div class="project-tech">
                         <span class="tech-tag">React</span>
@@ -223,7 +336,8 @@
                 </div>
                 <div class="team-name" data-i18n="team_member1_name">Кирилл Пилипенко</div>
                 <div class="team-role" data-i18n="team_member1_role">CEO & Основатель</div>
-                <p class="team-bio" data-i18n="team_member1_bio">Определяет вектор развития BENELUX и формирует команду экспертов для реализации инновационных проектов.</p>
+                <p class="team-bio" data-i18n="team_member1_bio">Определяет вектор развития BENELUX и формирует команду
+                    экспертов для реализации инновационных проектов.</p>
                 <div class="team-social">
                 </div>
             </div>
@@ -233,7 +347,8 @@
                 </div>
                 <div class="team-name" data-i18n="team_member2_name">Ерлан Аймуканов</div>
                 <div class="team-role" data-i18n="team_member2_role">Со-руководитель</div>
-                <p class="team-bio" data-i18n="team_member2_bio">Отвечает за эффективность внутренних процессов и успешное завершение всех ключевых проектов.</p>
+                <p class="team-bio" data-i18n="team_member2_bio">Отвечает за эффективность внутренних процессов и
+                    успешное завершение всех ключевых проектов.</p>
                 <div class="team-social">
                 </div>
             </div>
@@ -243,7 +358,8 @@
                 </div>
                 <div class="team-name" data-i18n="team_member2_name">Каламша Баймухан</div>
                 <div class="team-role" data-i18n="team_member2_role">Project Manager</div>
-                <p class="team-bio" data-i18n="team_member2_bio">Координирует работу команды, управляет ресурсами и рисками, гарантируя выполнение задач в установленные сроки и с соблюдением стандартов качества.</p>
+                <p class="team-bio" data-i18n="team_member2_bio">Координирует работу команды, управляет ресурсами и
+                    рисками, гарантируя выполнение задач в установленные сроки и с соблюдением стандартов качества.</p>
                 <div class="team-social">
                 </div>
             </div>
@@ -253,7 +369,8 @@
                 </div>
                 <div class="team-name" data-i18n="team_member3_name">Владислав Тугуши</div>
                 <div class="team-role" data-i18n="team_member3_role">Специалист по кибербезопасности</div>
-                <p class="team-bio" data-i18n="team_member3_bio">Обеспечивает комплексную защиту всех цифровых активов клиентов и инфраструктуры компании.</p>
+                <p class="team-bio" data-i18n="team_member3_bio">Обеспечивает комплексную защиту всех цифровых активов
+                    клиентов и инфраструктуры компании.</p>
                 <div class="team-social">
                 </div>
             </div>
@@ -263,7 +380,8 @@
                 </div>
                 <div class="team-name" data-i18n="team_member4_name">Никита Мальцев</div>
                 <div class="team-role" data-i18n="team_member4_role">Специалист по ИИ</div>
-                <p class="team-bio" data-i18n="team_member4_bio">Разрабатывает и внедряет нейронные сети для оптимизации бизнес-процессов и создания новых продуктов.</p>
+                <p class="team-bio" data-i18n="team_member4_bio">Разрабатывает и внедряет нейронные сети для оптимизации
+                    бизнес-процессов и создания новых продуктов.</p>
                 <div class="team-social">
                 </div>
             </div>
@@ -273,7 +391,8 @@
                 </div>
                 <div class="team-name" data-i18n="team_member5_name">Карабура Айтжанов</div>
                 <div class="team-role" data-i18n="team_member5_role">Мобилограф</div>
-                <p class="team-bio" data-i18n="team_member5_bio">Создает высококачественный видеоконтент, отражающий экспертизу и жизнь команды BENELUX.</p>
+                <p class="team-bio" data-i18n="team_member5_bio">Создает высококачественный видеоконтент, отражающий
+                    экспертизу и жизнь команды BENELUX.</p>
                 <div class="team-social">
                 </div>
             </div>
@@ -283,7 +402,8 @@
                 </div>
                 <div class="team-name" data-i18n="team_member6_name">Мариам Рогушева</div>
                 <div class="team-role" data-i18n="team_member6_role">Дизайнер</div>
-                <p class="team-bio" data-i18n="team_member6_bio">Превращает сложные идеи в интуитивно понятные и эстетически привлекательные интерфейсы.</p>
+                <p class="team-bio" data-i18n="team_member6_bio">Превращает сложные идеи в интуитивно понятные и
+                    эстетически привлекательные интерфейсы.</p>
                 <div class="team-social">
                 </div>
             </div>
@@ -293,7 +413,8 @@
                 </div>
                 <div class="team-name" data-i18n="team_member7_name">Наталья Ищенко</div>
                 <div class="team-role" data-i18n="team_member7_role">Тестировщик</div>
-                <p class="team-bio" data-i18n="team_member7_bio">Обеспечивает безупречную работу продукта, выявляя и устраняя критические ошибки до релиза.</p>
+                <p class="team-bio" data-i18n="team_member7_bio">Обеспечивает безупречную работу продукта, выявляя и
+                    устраняя критические ошибки до релиза.</p>
                 <div class="team-social">
                 </div>
             </div>
@@ -303,7 +424,8 @@
                 </div>
                 <div class="team-name" data-i18n="team_member8_name">Салтанат Еркингали</div>
                 <div class="team-role" data-i18n="team_member8_role">SMM-специалист</div>
-                <p class="team-bio" data-i18n="team_member8_bio">Управляет присутствием BENELUX в социальных сетях, строит сообщество и привлекает целевую аудиторию.</p>
+                <p class="team-bio" data-i18n="team_member8_bio">Управляет присутствием BENELUX в социальных сетях,
+                    строит сообщество и привлекает целевую аудиторию.</p>
                 <div class="team-social">
                 </div>
             </div>
@@ -313,7 +435,8 @@
                 </div>
                 <div class="team-name" data-i18n="team_member9_name">Акнур Аскарова</div>
                 <div class="team-role" data-i18n="team_member9_role">Переводчик</div>
-                <p class="team-bio" data-i18n="team_member9_bio">Обеспечивает точную языковую адаптацию продуктов и коммуникаций, стирая границы между технологиями и глобальным рынком.</p>
+                <p class="team-bio" data-i18n="team_member9_bio">Обеспечивает точную языковую адаптацию продуктов и
+                    коммуникаций, стирая границы между технологиями и глобальным рынком.</p>
                 <div class="team-social">
                 </div>
             </div>
@@ -389,9 +512,12 @@
                 <div class="testimonials-track" id="testimonialsTrack">
                     <div class="testimonial-card">
                         <div class="testimonial-quote" data-i18n="testimonial1_text">
-                            Сайт оставляет очень хорошее впечатление: современный дизайн, понятная структура и удобная навигация.
-                            Информация изложена чётко и логично, легко найти нужные разделы. Видно, что сайт продуман с точки зрения пользователя.
-                            При небольшом усилении продающих акцентов и доработке деталей можно смело довести до идеального уровня.
+                            Сайт оставляет очень хорошее впечатление: современный дизайн, понятная структура и удобная
+                            навигация.
+                            Информация изложена чётко и логично, легко найти нужные разделы. Видно, что сайт продуман с
+                            точки зрения пользователя.
+                            При небольшом усилении продающих акцентов и доработке деталей можно смело довести до
+                            идеального уровня.
                         </div>
                         <div class="testimonial-author">
                             <div class="author-avatar">ГК</div>
@@ -405,10 +531,14 @@
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-quote" data-i18n="testimonial2_text">
-                            Хочется выразить благодарность одному из разработчиков данной компании за профессионализм и отличную работу.
-                            Он с нуля создал сайт, который не только выглядит как современный лендинг, но и включает полноценную образовательную платформу.
-                            Всё работает стабильно: личные кабинеты, загрузка видеоуроков и материалов, отслеживание прогресса пользователей.
-                            Работать с ним было легко и комфортно — всегда на связи и решает задачи быстро. Спасибо за качественный результат!
+                            Хочется выразить благодарность одному из разработчиков данной компании за профессионализм и
+                            отличную работу.
+                            Он с нуля создал сайт, который не только выглядит как современный лендинг, но и включает
+                            полноценную образовательную платформу.
+                            Всё работает стабильно: личные кабинеты, загрузка видеоуроков и материалов, отслеживание
+                            прогресса пользователей.
+                            Работать с ним было легко и комфортно — всегда на связи и решает задачи быстро. Спасибо за
+                            качественный результат!
                         </div>
                         <div class="testimonial-author">
                             <div class="author-avatar">МБ</div>
@@ -512,7 +642,7 @@
     <section class="contact" id="contact">
         <h2 class="section-title"><span data-i18n="contact_title1">Свяжитесь</span> <span class="gradient-text"
                 data-i18n="contact_title2">с нами</span></h2>
-        <p style="color: #b0b0b0; margin-bottom: 20px;" data-i18n="contact_subtitle">Готовы начать ваш проект? Заполните
+        <p class="contact-subtitle" data-i18n="contact_subtitle">Готовы начать ваш проект? Заполните
             форму, и мы свяжемся с вами в ближайшее время</p>
         <form class="contact-form" id="contactForm">
             <div class="form-group">
@@ -584,7 +714,8 @@
                     <span>+7 (702) 947 3930</span>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://www.instagram.com/benelux_aqtobe?igsh=MWJ3NTNwcTJ2bHpjaw==" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/benelux_aqtobe?igsh=MWJ3NTNwcTJ2bHpjaw==" class="social-link"><i
+                            class="fab fa-instagram"></i></a>
                     <a href="https://t.me/beneluxtech" class="social-link"><i class="fab fa-telegram"></i></a>
                 </div>
             </div>
@@ -617,6 +748,8 @@
             <i class="fas fa-arrow-up"></i>
         </button>
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="JS/map.js"></script>
     <script src="JS/main.js"></script>
 </body>
 

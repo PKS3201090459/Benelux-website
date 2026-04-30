@@ -8,9 +8,25 @@ const translations = {
         nav_about: 'О нас',
         nav_testimonials: 'Отзывы',
         nav_contact: 'Контакты',
+        nav_map: 'Карта',
+        map_title: 'Карта',
+        map_subtitle: 'Наше присутствие в Казахстане',
+        map_city_aktobe: 'Актобе',
+        map_city_kostanay: 'Костанай',
+        map_aktobe_desc: 'Главный офис компании',
+        map_kostanay_desc: 'Региональное представительство',
+        map_work_title: 'Работаем по всему Казахстану',
+        map_work_desc: 'Локальная поддержка клиентов',
+        map_stat_offices: 'офиса',
+        map_stat_clients: 'клиентов',
+        map_stat_projects: 'проектов',
+        map_stat_support: 'поддержка',
+        map_cta_title: 'Свяжитесь с ближайшим офисом',
+        map_cta_btn: 'Получить консультацию',
         hero_title1: 'Инновационные',
         hero_title2: 'IT-решения',
         hero_title3: 'для вашего бизнеса',
+        hero_eyebrow: 'Сервис класса Enterprise для смелых брендов',
         hero_subtitle: 'Создаём современные цифровые продукты, которые трансформируют индустрии',
         hero_btn1: 'Начать проект',
         hero_btn2: 'Наши услуги',
@@ -106,9 +122,25 @@ const translations = {
         nav_about: 'Біз туралы',
         nav_testimonials: 'Пікірлер',
         nav_contact: 'Байланыс',
+        nav_map: 'Карта',
+        map_title: 'Карта',
+        map_subtitle: 'Қазақстандағы біздің қатысуымыз',
+        map_city_aktobe: 'Ақтөбе',
+        map_city_kostanay: 'Қостанай',
+        map_aktobe_desc: 'Компанияның бас кеңсесі',
+        map_kostanay_desc: 'Аймақтық өкілдік',
+        map_work_title: 'Бүкіл Қазақстан бойынша жұмыс істейміз',
+        map_work_desc: 'Клиенттерге жергілікті қолдау',
+        map_stat_offices: 'кеңсе',
+        map_stat_clients: 'клиент',
+        map_stat_projects: 'жоба',
+        map_stat_support: 'қолдау',
+        map_cta_title: 'Ең жақын кеңсемен байланысыңыз',
+        map_cta_btn: 'Кеңес алу',
         hero_title1: 'Инновациялық',
         hero_title2: 'IT-шешімдер',
         hero_title3: 'сіздің бизнесіңіз үшін',
+        hero_eyebrow: 'Enterprise деңгейіндегі қызметтер батыл брендтерге',
         hero_subtitle: 'Индустрияларды өзгертетін заманауи цифрлық өнімдер жасаймыз',
         hero_btn1: 'Жобаны бастау',
         hero_btn2: 'Біздің қызметтер',
@@ -204,9 +236,25 @@ const translations = {
         nav_about: 'About',
         nav_testimonials: 'Testimonials',
         nav_contact: 'Contact',
+        nav_map: 'Map',
+        map_title: 'Map',
+        map_subtitle: 'Our presence across Kazakhstan',
+        map_city_aktobe: 'Aktobe',
+        map_city_kostanay: 'Kostanay',
+        map_aktobe_desc: 'Main company office',
+        map_kostanay_desc: 'Regional representative office',
+        map_work_title: 'We operate across Kazakhstan',
+        map_work_desc: 'Local support for clients',
+        map_stat_offices: 'offices',
+        map_stat_clients: 'clients',
+        map_stat_projects: 'projects',
+        map_stat_support: 'support',
+        map_cta_title: 'Contact the nearest office',
+        map_cta_btn: 'Get consultation',
         hero_title1: 'Innovative',
         hero_title2: 'IT Solutions',
         hero_title3: 'for Your Business',
+        hero_eyebrow: 'Enterprise-grade services for bold brands',
         hero_subtitle: 'We create modern digital products that transform industries',
         hero_btn1: 'Start Project',
         hero_btn2: 'Our Services',
@@ -442,13 +490,22 @@ function closeModal(modalId) {
 // Project filtering
 let currentFilter = 'all';
 
-function filterProjects(category) {
+function filterProjects(event, category) {
+    if (typeof category === 'undefined') {
+        category = event;
+        event = null;
+    }
+
     currentFilter = category;
     const cards = document.querySelectorAll('.project-card');
     const buttons = document.querySelectorAll('.filter-btn');
 
     buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    if (event?.target instanceof HTMLElement) {
+        event.target.classList.add('active');
+    } else if (buttons.length) {
+        buttons[0].classList.add('active');
+    }
 
     cards.forEach(card => {
         if (category === 'all' || card.dataset.category === category) {
@@ -616,6 +673,7 @@ async function sendToTelegram(formData) {
 document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contactForm");
     const successMessage = document.getElementById("successMessage");
+    initSciFiParticlesStatic();
 
     if (contactForm) {
         // скрываем сообщение при загрузке
@@ -664,6 +722,231 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+function initSciFiParticlesStatic() {
+    const canvas = document.getElementById('fx-canvas');
+    if (!canvas) return;
+
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+    if (prefersReducedMotion) return;
+
+    const ctx = canvas.getContext('2d', { alpha: true });
+    if (!ctx) return;
+
+    const state = {
+        w: 0,
+        h: 0,
+        lastT: 0,
+        particles: [],
+        layers: [
+            { count: 16, depth: 0.35, speed: 0.11, blur: 10, alpha: 0.18 },
+            { count: 24, depth: 0.65, speed: 0.18, blur: 14, alpha: 0.22 },
+            { count: 16, depth: 1.0, speed: 0.26, blur: 18, alpha: 0.26 },
+        ]
+    };
+
+    function rand(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    function clamp(v, a, b) {
+        return Math.max(a, Math.min(b, v));
+    }
+
+    function resize() {
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        state.w = Math.max(1, window.innerWidth);
+        state.h = Math.max(1, window.innerHeight);
+        canvas.width = Math.floor(state.w * dpr);
+        canvas.height = Math.floor(state.h * dpr);
+        canvas.style.width = `${state.w}px`;
+        canvas.style.height = `${state.h}px`;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function readBrandColors() {
+        const styles = getComputedStyle(document.documentElement);
+        const brand1 = styles.getPropertyValue('--brand-1')?.trim() || '#95B415';
+        const brand2 = styles.getPropertyValue('--brand-2')?.trim() || '#D69113';
+        return { brand1, brand2 };
+    }
+
+    function drawCrystal(x, y, r, rot, colorA, colorB, a, blurPx) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(rot);
+
+        ctx.globalAlpha = a;
+        ctx.shadowBlur = blurPx;
+        ctx.shadowColor = colorA;
+
+        const grad = ctx.createLinearGradient(-r, -r, r, r);
+        grad.addColorStop(0, colorA);
+        grad.addColorStop(1, colorB);
+        ctx.fillStyle = grad;
+
+        ctx.beginPath();
+        ctx.moveTo(0, -r);
+        ctx.lineTo(r * 0.82, -r * 0.15);
+        ctx.lineTo(r * 0.55, r);
+        ctx.lineTo(0, r * 0.55);
+        ctx.lineTo(-r * 0.55, r);
+        ctx.lineTo(-r * 0.82, -r * 0.15);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.shadowBlur = blurPx * 0.65;
+        ctx.globalAlpha = a * 0.38;
+        ctx.fillStyle = 'rgba(255,255,255,0.45)';
+        ctx.beginPath();
+        ctx.moveTo(0, -r * 0.55);
+        ctx.lineTo(r * 0.22, -r * 0.10);
+        ctx.lineTo(0, r * 0.30);
+        ctx.lineTo(-r * 0.22, -r * 0.10);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.restore();
+    }
+
+    function drawDot(x, y, r, color, a, blurPx) {
+        ctx.save();
+        ctx.globalAlpha = a;
+        ctx.shadowBlur = blurPx;
+        ctx.shadowColor = color;
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+    }
+
+    function makeParticle(layer) {
+        const z = clamp(layer.depth * rand(0.78, 1.22), 0.22, 1.25);
+        const perspective = 1 / (0.38 + z);
+
+        const x = rand(-state.w * 0.65, state.w * 0.65);
+        const y = rand(-state.h * 0.65, state.h * 0.65);
+
+        const angle = rand(0, Math.PI * 2);
+        const driftAngle = angle + rand(-0.95, 0.95);
+        const baseSpeed = layer.speed * rand(0.35, 1.55) * (1.05 / (0.65 + z));
+        const vx = Math.cos(driftAngle) * baseSpeed;
+        const vy = Math.sin(driftAngle) * baseSpeed;
+
+        const hueMix = Math.random() < 0.52 ? 'brand1' : 'brand2';
+        const spin = rand(-0.010, 0.010) * (0.9 / (0.55 + z));
+        const size = rand(10, 52) * perspective * rand(0.85, 1.25);
+
+        const ttl = rand(10.0, 20.0) * (0.9 + z * 0.35);
+        const fadeIn = rand(1.2, 3.2);
+        const fadeOut = rand(1.2, 3.4);
+
+        const twFreq = rand(0.35, 1.2) * (0.9 + (1.1 - z));
+        const twPhase = rand(0, Math.PI * 2);
+        const twAmp = rand(0.10, 0.32);
+
+        return {
+            x,
+            y,
+            vx,
+            vy,
+            z,
+            size,
+            rot: rand(0, Math.PI * 2),
+            spin,
+            blur: layer.blur * (0.7 + (1.25 - z) * 0.6),
+            alpha: layer.alpha * rand(0.72, 1.15),
+            hueMix,
+            shape: Math.random() < 0.68 ? 'crystal' : 'dot',
+            age: rand(0, ttl * 0.55),
+            ttl,
+            fadeIn,
+            fadeOut,
+            twFreq,
+            twPhase,
+            twAmp
+        };
+    }
+
+    function resetParticles() {
+        state.particles = [];
+        const density = clamp((state.w * state.h) / (1200 * 850), 0.8, 1.6);
+        for (const layer of state.layers) {
+            const count = Math.round(layer.count * density);
+            for (let i = 0; i < count; i++) {
+                state.particles.push(makeParticle(layer));
+            }
+        }
+    }
+
+    function tick(ts) {
+        const t = ts * 0.001;
+        const dt = state.lastT ? clamp(t - state.lastT, 0.001, 0.05) : 0.016;
+        state.lastT = t;
+
+        ctx.clearRect(0, 0, state.w, state.h);
+        const { brand1, brand2 } = readBrandColors();
+
+        for (const p of state.particles) {
+            p.age += dt;
+            if (p.age > p.ttl) {
+                const layer = state.layers.reduce((acc, l) => {
+                    return Math.abs(l.depth - p.z) < Math.abs(acc.depth - p.z) ? l : acc;
+                }, state.layers[0]);
+                Object.assign(p, makeParticle(layer));
+            }
+
+            p.x += p.vx;
+            p.y += p.vy;
+            p.rot += p.spin;
+
+            const wob = 0.18 + (1.0 - p.z / 1.25) * 0.22;
+            const wobX = Math.sin(t * 0.6 + p.x * 0.004) * wob;
+            const wobY = Math.cos(t * 0.7 + p.y * 0.004) * wob;
+
+            const perspective = 1 / (0.38 + p.z);
+            const x = (p.x + wobX) * perspective + state.w * 0.5;
+            const y = (p.y + wobY) * perspective + state.h * 0.5;
+
+            const worldXLimit = state.w * 0.92;
+            const worldYLimit = state.h * 0.92;
+            if (p.x < -worldXLimit) p.x = worldXLimit;
+            if (p.x > worldXLimit) p.x = -worldXLimit;
+            if (p.y < -worldYLimit) p.y = worldYLimit;
+            if (p.y > worldYLimit) p.y = -worldYLimit;
+
+            const fadeInK = clamp(p.age / p.fadeIn, 0, 1);
+            const fadeOutK = clamp((p.ttl - p.age) / p.fadeOut, 0, 1);
+            const envelope = Math.min(fadeInK, fadeOutK);
+            const tw = 1 + p.twAmp * Math.sin(t * (Math.PI * 2) * p.twFreq + p.twPhase);
+
+            const a = p.alpha * envelope * tw;
+            const blur = p.blur + (10 * (1.0 - p.z / 1.25));
+
+            const cA = p.hueMix === 'brand1' ? brand1 : brand2;
+            const cB = p.hueMix === 'brand1' ? brand2 : brand1;
+
+            const r = Math.max(3.5, p.size * (0.9 + (1.0 - p.z / 1.25) * 0.55));
+            if (p.shape === 'crystal') {
+                drawCrystal(x, y, r, p.rot, cA, cB, a, blur);
+            } else {
+                drawDot(x, y, Math.max(1.1, r * 0.18), cA, a * 0.85, blur * 0.9);
+            }
+        }
+
+        requestAnimationFrame(tick);
+    }
+
+    window.addEventListener('resize', () => {
+        resize();
+        resetParticles();
+    }, { passive: true });
+
+    resize();
+    resetParticles();
+    requestAnimationFrame(tick);
+}
+
 // FAQ Accordion
 function toggleFaq(element) {
     const faqItem = element.parentElement;
@@ -679,7 +962,6 @@ window.addEventListener('scroll', () => {
         scrollTopBtn.classList.remove('show');
     }
 });
-
 // Плавный скролл наверх (если функции еще нет)
 function scrollToTop() {
     window.scrollTo({
@@ -687,3 +969,4 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+
