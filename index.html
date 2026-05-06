@@ -28,10 +28,10 @@
     <div class="fx-vignette" aria-hidden="true"></div>
     <header id="header">
         <nav>
-            <div class="logo" onclick="scrollToTop()">
-                <img src="benelux.png" alt="Benelux Logo" class="nav-logo">
-                <span>Benelux</span>
+            <div class="nav-logo-container" onclick="scrollToTop()">
+                <img src="images/new-logo.png" alt="Benelux Logo" class="nav-logo">
             </div>
+            
             <div class="nav-center" id="navCenter">
                 <ul class="nav-links">
                     <li><a href="#home" onclick="closeMenu()" data-i18n="nav_home">Главная</a></li>
@@ -40,22 +40,34 @@
                     <li><a href="#projects" onclick="closeMenu()" data-i18n="nav_projects">Проекты</a></li>
                     <li><a href="#team" onclick="closeMenu()" data-i18n="nav_team">Команда</a></li>
                     <li><a href="#about" onclick="closeMenu()" data-i18n="nav_about">О нас</a></li>
-                    <li><a href="#process" onclick="closeMenu()" data-i18n="nav_process">Процесс</a></li>
+                    <li><a href="#info-section" onclick="closeMenu()" data-i18n="nav_process">Процесс</a></li>
                     <li><a href="#faq" onclick="closeMenu()" data-i18n="nav_faq">FAQ</a></li>
                     <li><a href="#testimonials" onclick="closeMenu()" data-i18n="nav_testimonials">Отзывы</a></li>
                     <li><a href="#contact" onclick="closeMenu()" data-i18n="nav_contact">Контакты</a></li>
                 </ul>
+                <div class="search-bar-mobile">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Поиск..." oninput="handleSearch(this.value)">
+                </div>
                 <div class="language-switcher-mobile">
                     <button class="lang-btn active" id="langRuMobile" onclick="changeLanguage('ru')">RU</button>
                     <button class="lang-btn" id="langKkMobile" onclick="changeLanguage('kk')">ҚЗ</button>
                     <button class="lang-btn" id="langEnMobile" onclick="changeLanguage('en')">EN</button>
                 </div>
             </div>
-            <div class="language-switcher-desktop">
-                <button class="lang-btn active" id="langRu" onclick="changeLanguage('ru')">RU</button>
-                <button class="lang-btn" id="langKk" onclick="changeLanguage('kk')">ҚЗ</button>
-                <button class="lang-btn" id="langEn" onclick="changeLanguage('en')">EN</button>
+
+            <div class="nav-right-container">
+                <div class="search-bar-premium">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="siteSearch" placeholder="Поиск по сайту..." oninput="handleSearch(this.value)">
+                </div>
+                <div class="language-switcher-desktop">
+                    <button class="lang-btn active" id="langRu" onclick="changeLanguage('ru')">RU</button>
+                    <button class="lang-btn" id="langKk" onclick="changeLanguage('kk')">ҚЗ</button>
+                    <button class="lang-btn" id="langEn" onclick="changeLanguage('en')">EN</button>
+                </div>
             </div>
+
             <div class="hamburger" id="hamburger" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -92,15 +104,34 @@
                     <div class="visual-glow"></div>
                     <div class="visual-stack">
                         <div class="visual-card visual-card--top">
-                            <div class="visual-badge">
-                                <img src="benelux.png" alt="Benelux" class="visual-logo">
+                            <div class="visual-card-header">
+                                <div class="visual-badge">
+                                    <img src="images/new-logo.png" alt="Benelux" class="visual-logo">
+                                </div>
+                                <div class="visual-status">Live</div>
                             </div>
-                            <div class="visual-lines">
-                                <span></span><span></span><span></span>
+                            <div class="tech-stack-ui">
+                                <div class="tech-item neon-react" title="React"><i class="fab fa-react"></i></div>
+                                <div class="tech-item neon-python" title="Python"><i class="fab fa-python"></i></div>
+                                <div class="tech-item neon-aws" title="AWS"><i class="fab fa-aws"></i></div>
+                                <div class="tech-item neon-docker" title="Docker"><i class="fab fa-docker"></i></div>
+                            </div>
+                            <div class="card-footer-text">Advanced IT Stack</div>
+                        </div>
+
+                        <div class="visual-card visual-card--bot">
+                            <div class="stat-content">
+                                <div class="stat-main-large">100+</div>
+                                <div class="stat-label-large">проектов</div>
+                            </div>
+                            <div class="stat-badge-premium">
+                                <i class="fas fa-handshake"></i>
+                                <span>Expert Partnership</span>
+                            </div>
+                            <div class="progress-container-premium">
+                                <div class="progress-fill-premium"></div>
                             </div>
                         </div>
-                        <div class="visual-card visual-card--mid"></div>
-                        <div class="visual-card visual-card--bot"></div>
                     </div>
                 </div>
             </div>
@@ -110,65 +141,47 @@
     <section class="services" id="services">
         <h2 class="section-title"><span data-i18n="services_title1">Наши</span> <span class="gradient-text"
                 data-i18n="services_title2">услуги</span></h2>
-        <div class="services-grid">
-            <div class="service-card service-card--feature" onclick="openModal('web')">
-                <div class="service-top">
-                    <span class="service-badge">01</span>
-                    <span class="service-icon">💻</span>
+        <div class="services-grid bento-grid">
+            <div class="service-card bento-item bento-item--feature" onclick="openModal('web')" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop');">
+                <div class="bento-overlay"></div>
+                <div class="service-content-bento">
+                    <div class="service-top">
+                        <span class="service-badge">01</span>
+                        <span class="service-icon"><i class="fas fa-laptop-code"></i></span>
+                    </div>
+                    <h3 data-i18n="service_web_title">Веб-разработка</h3>
+                    <p data-i18n="service_web_desc">Создаём высокопроизводительные веб-приложения и сайты с современным дизайном.</p>
                 </div>
-                <h3 data-i18n="service_web_title">Веб-разработка</h3>
-                <p data-i18n="service_web_desc">Создаём высокопроизводительные веб-приложения и сайты с современным
-                    дизайном и безупречной функциональностью</p>
-                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
             </div>
-            <div class="service-card service-card--small" onclick="openModal('ai')">
-                <div class="service-top">
-                    <span class="service-badge">02</span>
-                    <span class="service-icon">🤖</span>
+            <div class="service-card bento-item bento-item--small" onclick="openModal('ai')" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop');">
+                <div class="bento-overlay"></div>
+                <div class="service-content-bento">
+                    <div class="service-top">
+                        <span class="service-badge">02</span>
+                        <span class="service-icon"><i class="fas fa-brain"></i></span>
+                    </div>
+                    <h3 data-i18n="service_ai_title">AI & ML</h3>
                 </div>
-                <h3 data-i18n="service_ai_title">AI & Machine Learning</h3>
-                <p data-i18n="service_ai_desc">Интегрируем искусственный интеллект и машинное обучение в ваши продукты
-                </p>
-                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
             </div>
-            <div class="service-card service-card--medium" onclick="openModal('cloud')">
-                <div class="service-top">
-                    <span class="service-badge">03</span>
-                    <span class="service-icon">☁️</span>
+            <div class="service-card bento-item bento-item--medium" onclick="openModal('cloud')" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop');">
+                <div class="bento-overlay"></div>
+                <div class="service-content-bento">
+                    <div class="service-top">
+                        <span class="service-badge">03</span>
+                        <span class="service-icon"><i class="fas fa-cloud"></i></span>
+                    </div>
+                    <h3 data-i18n="service_cloud_title">Cloud Systems</h3>
                 </div>
-                <h3 data-i18n="service_cloud_title">Облачные решения</h3>
-                <p data-i18n="service_cloud_desc">Проектируем и внедряем масштабируемую облачную инфраструктуру для
-                    вашего бизнеса</p>
-                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
             </div>
-            <div class="service-card service-card--wide" onclick="openModal('mobile')">
-                <div class="service-top">
-                    <span class="service-badge">04</span>
-                    <span class="service-icon">📱</span>
+            <div class="service-card bento-item bento-item--wide" onclick="openModal('mobile')" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop');">
+                <div class="bento-overlay"></div>
+                <div class="service-content-bento">
+                    <div class="service-top">
+                        <span class="service-badge">04</span>
+                        <span class="service-icon"><i class="fas fa-mobile-alt"></i></span>
+                    </div>
+                    <h3 data-i18n="service_mobile_title">Mobile Dev</h3>
                 </div>
-                <h3 data-i18n="service_mobile_title">Мобильные приложения</h3>
-                <p data-i18n="service_mobile_desc">Разрабатываем нативные и кроссплатформенные мобильные приложения для
-                    iOS и Android</p>
-                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
-            </div>
-            <div class="service-card service-card--small" onclick="openModal('security')">
-                <div class="service-top">
-                    <span class="service-badge">05</span>
-                    <span class="service-icon">🔒</span>
-                </div>
-                <h3 data-i18n="service_security_title">Кибербезопасность</h3>
-                <p data-i18n="service_security_desc">Обеспечиваем комплексную защиту ваших данных и инфраструктуры</p>
-                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
-            </div>
-            <div class="service-card service-card--medium" onclick="openModal('analytics')">
-                <div class="service-top">
-                    <span class="service-badge">06</span>
-                    <span class="service-icon">📊</span>
-                </div>
-                <h3 data-i18n="service_analytics_title">Аналитика данных</h3>
-                <p data-i18n="service_analytics_desc">Помогаем принимать обоснованные решения на основе анализа больших
-                    данных</p>
-                <button class="service-btn" data-i18n="service_btn">Подробнее →</button>
             </div>
         </div>
     </section>
@@ -473,166 +486,127 @@
         </div>
     </section>
 
-    <section class="process" id="process">
-        <h2 class="section-title">
-            <span data-i18n="process_title1">Наш</span>
-            <span class="gradient-text" data-i18n="process_title2">процесс</span>
-        </h2>
-        <div class="process-steps">
-            <div class="step-card">
-                <div class="step-number">01</div>
-                <h3 data-i18n="step1_title">Аналитика</h3>
-                <p data-i18n="step1_desc">Изучаем ваш бизнес, конкурентов и формируем детальное ТЗ.</p>
+    <section id="info-section">
+        <div class="info-grid">
+            <div class="info-column" id="faq">
+                <h2 class="section-title">
+                    <span data-i18n="faq_title">Часто задаваемые вопросы</span>
+                </h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span data-i18n="faq_q1">Сколько времени занимает разработка сайта?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p data-i18n="faq_a1">Сроки зависят от сложности проекта. Лендинг мы создаем от 7 дней, а сложный портал — от 1 месяца.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span data-i18n="faq_q2">Предоставляете ли вы поддержку?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p data-i18n="faq_a2">Да, мы обеспечиваем техподдержку и мониторинг серверов 24/7 после запуска.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span data-i18n="faq_q3">Как происходит оплата услуг?</span>
+                            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                <p data-i18n="faq_a3">Мы работаем по системе 50/50: предоплата перед стартом и финальный расчет по завершении.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="step-card">
-                <div class="step-number">02</div>
-                <h3 data-i18n="step2_title">Прототип</h3>
-                <p data-i18n="step2_desc">Создаем визуальную структуру и логику взаимодействия (UX/UI).</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">03</div>
-                <h3 data-i18n="step3_title">Разработка</h3>
-                <p data-i18n="step3_desc">Пишем чистый код и настраиваем серверную часть проекта.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-number">04</div>
-                <h3 data-i18n="step4_title">Запуск</h3>
-                <p data-i18n="step4_desc">Тестируем, переносим на боевой сервер и обучаем вашу команду.</p>
+
+            <div class="info-column">
+                <h2 class="section-title">
+                    <span data-i18n="process_title1">Наш</span>
+                    <span class="gradient-text" data-i18n="process_title2">процесс</span>
+                </h2>
+                <div class="process-steps">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step1_title">Аналитика</h3>
+                            <p data-i18n="step1_desc">Изучаем бизнес и формируем детальное ТЗ.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step2_title">Прототип</h3>
+                            <p data-i18n="step2_desc">Создаем визуальную структуру и логику (UX/UI).</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step3_title">Разработка</h3>
+                            <p data-i18n="step3_desc">Пишем чистый код и настраиваем серверную часть.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3 data-i18n="step4_title">Запуск</h3>
+                            <p data-i18n="step4_desc">Тестируем и переносим на боевой сервер.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials" id="testimonials">
-        <h2 class="section-title"><span data-i18n="testimonials_title1">Что говорят</span> <span class="gradient-text"
-                data-i18n="testimonials_title2">наши клиенты</span></h2>
-        <div class="testimonials-container">
-            <button class="slider-arrow prev" onclick="changeTestimonial(-1)">←</button>
-            <button class="slider-arrow next" onclick="changeTestimonial(1)">→</button>
-            <div class="testimonials-wrapper">
-                <div class="testimonials-track" id="testimonialsTrack">
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote" data-i18n="testimonial1_text">
-                            Сайт оставляет очень хорошее впечатление: современный дизайн, понятная структура и удобная
-                            навигация.
-                            Информация изложена чётко и логично, легко найти нужные разделы. Видно, что сайт продуман с
-                            точки зрения пользователя.
-                            При небольшом усилении продающих акцентов и доработке деталей можно смело довести до
-                            идеального уровня.
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">ГК</div>
-                            <div class="author-info">
-                                <div class="author-name" data-i18n="testimonial1_name">Гульдана Кенжегара</div>
-                                <div class="author-position">Эксперт по маркетиингу</div>
-                                <div class="author-company">Бизнес парк Kasip</div>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+    <section class="testimonials-section" id="testimonials">
+        <h2 class="section-title"><span data-i18n="testimonials_title1">Что говорят</span> <span class="gradient-text" data-i18n="testimonials_title2">наши клиенты</span></h2>
+        <div class="testimonials-container-premium">
+            <div class="testimonial-card-premium">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p data-i18n="testimonial1_text">Benelux превзошли все наши ожидания! Они создали платформу для нашего финтех-стартапа за 3 месяца. Профессионализм, внимание к деталям и отличная коммуникация на протяжении всего проекта.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar-premium">АК</div>
+                    <div class="author-info">
+                        <h4 data-i18n="testimonial1_name">Алексей Ковалёв</h4>
+                        <span class="author-role">CEO, TechFlow</span>
                     </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote" data-i18n="testimonial2_text">
-                            Хочется выразить благодарность одному из разработчиков данной компании за профессионализм и
-                            отличную работу.
-                            Он с нуля создал сайт, который не только выглядит как современный лендинг, но и включает
-                            полноценную образовательную платформу.
-                            Всё работает стабильно: личные кабинеты, загрузка видеоуроков и материалов, отслеживание
-                            прогресса пользователей.
-                            Работать с ним было легко и комфортно — всегда на связи и решает задачи быстро. Спасибо за
-                            качественный результат!
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">МБ</div>
-                            <div class="author-info">
-                                <div class="author-name" data-i18n="testimonial2_name">Меруерт Бассен</div>
-                                <div class="author-position">Со-руководитель и финансист</div>
-                                <div class="author-company">Бизнес парк Kasip</div>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                    </div>
-                    <!--<div class="testimonial-card">
-                        <div class="testimonial-quote" data-i18n="testimonial3_text">
-                            Миграция нашей инфраструктуры в облако прошла безупречно благодаря экспертизе Benelux.
-                            Производительность выросла на 300%, а расходы снизились на 40%. Рекомендую!
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">ДП</div>
-                            <div class="author-info">
-                                <div class="author-name" data-i18n="testimonial3_name">Дмитрий Петров</div>
-                                <div class="author-position">IT Director</div>
-                                <div class="author-company">GlobalTrade Inc</div>
-                            </div>
-                        </div>
-                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                    </div>-->
                 </div>
             </div>
-            <div class="slider-nav">
-                <button class="slider-dot active" onclick="goToTestimonial(0)"></button>
-                <!--<button class="slider-dot" onclick="goToTestimonial(1)"></button>
-                <button class="slider-dot" onclick="goToTestimonial(2)"></button>-->
+            <div class="testimonial-card-premium">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p data-i18n="testimonial2_text">Работа с командой Benelux - это настоящее удовольствие. Они не просто выполнили техническое задание, а предложили инновационные решения, которые значительно улучшили наш продукт.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar-premium">МС</div>
+                    <div class="author-info">
+                        <h4 data-i18n="testimonial2_name">Мария Смирнова</h4>
+                        <span class="author-role">Product Manager, GlobalRetail</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section class="faq" id="faq">
-        <div class="container">
-            <h2 class="section-title">
-                <span data-i18n="faq_title">Часто задаваемые вопросы</span>
-            </h2>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span data-i18n="faq_q1">Сколько времени занимает разработка сайта?</span>
-                        <div class="faq-icon">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="answer-content">
-                            <p data-i18n="faq_a1">
-                                Сроки зависят от сложности проекта. Лендинг мы создаем от 7 дней,
-                                а сложный корпоративный портал или интернет-магазин — от 1 месяца.
-                                Каждый этап фиксируется в договоре.
-                            </p>
-                        </div>
-                    </div>
+            <div class="testimonial-card-premium">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p data-i18n="testimonial3_text">Миграция нашей инфраструктуры в облако прошла безупречно благодаря экспертизе Benelux. Производительность выросла на 300%, а расходы снизились на 40%. Рекомендую!</p>
                 </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span data-i18n="faq_q2">Предоставляете ли вы поддержку после запуска?</span>
-                        <div class="faq-icon">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="answer-content">
-                            <p data-i18n="faq_a2">
-                                Да, мы не бросаем проекты. В стоимость включена техническая поддержка
-                                в течение первого месяца, а также мониторинг серверов 24/7 и оперативное
-                                исправление любых ошибок.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span data-i18n="faq_q3">Как происходит оплата услуг?</span>
-                        <div class="faq-icon">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="answer-content">
-                            <p data-i18n="faq_a3">
-                                Обычно мы работаем по системе 50/50: предоплата перед стартом
-                                и финальный расчет после приема всех работ. Возможна поэтапная
-                                оплата для крупных проектов.
-                            </p>
-                        </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar-premium">ДП</div>
+                    <div class="author-info">
+                        <h4 data-i18n="testimonial3_name">Дмитрий Петров</h4>
+                        <span class="author-role">CTO, DataVision</span>
                     </div>
                 </div>
             </div>
@@ -640,33 +614,83 @@
     </section>
 
     <section class="contact" id="contact">
-        <h2 class="section-title"><span data-i18n="contact_title1">Свяжитесь</span> <span class="gradient-text"
-                data-i18n="contact_title2">с нами</span></h2>
-        <p class="contact-subtitle" data-i18n="contact_subtitle">Готовы начать ваш проект? Заполните
-            форму, и мы свяжемся с вами в ближайшее время</p>
-        <form class="contact-form" id="contactForm">
-            <div class="form-group">
-                <label data-i18n="form_name">Имя</label>
-                <input type="text" id="name" required placeholder="">
+        <h2 class="section-title">
+            <span data-i18n="contact_title1">Свяжитесь</span> 
+            <span class="gradient-text" data-i18n="contact_title2">с нами</span>
+        </h2>
+        <p class="contact-subtitle" data-i18n="contact_subtitle">Готовы начать ваш проект? Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+        
+        <div class="contact-container-premium">
+            <form class="contact-form-premium" id="contactForm">
+                <div class="form-group-premium">
+                    <label data-i18n="form_name">Имя</label>
+                    <input type="text" id="name" required placeholder="Ваше имя">
+                </div>
+                <div class="form-group-premium">
+                    <label>Email</label>
+                    <input type="email" id="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group-premium">
+                    <label data-i18n="form_phone">Номер телефона</label>
+                    <input type="text" id="phone" required placeholder="+7 (___) ___-____">
+                </div>
+                <div class="form-group-premium">
+                    <label data-i18n="form_company">Компания</label>
+                    <input type="text" id="company" placeholder="Название компании">
+                </div>
+                <div class="form-group-premium">
+                    <label data-i18n="form_message">Сообщение</label>
+                    <textarea id="message" required placeholder="Как мы можем вам помочь?"></textarea>
+                </div>
+                <button type="submit" class="btn-primary-premium" data-i18n="form_submit">Отправить заявку</button>
+            </form>
+
+            <div class="contact-info-premium">
+                <div class="info-card-premium">
+                    <h3 class="info-title-premium">Полезная информация</h3>
+                    <div class="info-divider"></div>
+                    
+                    <div class="info-section-premium">
+                        <h4>Наши контакты</h4>
+                        <div class="info-item-premium">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Актобе, пр. Абулхайыр хана 52А</span>
+                        </div>
+                        <div class="info-item-premium">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+7 (702) 947 3930</span>
+                        </div>
+                        <div class="info-item-premium">
+                            <i class="fas fa-envelope"></i>
+                            <span>benelux.aktobe@bk.ru</span>
+                        </div>
+                    </div>
+
+                    <div class="info-section-premium">
+                        <h4>Почему мы?</h4>
+                        <div class="info-item-premium">
+                            <i class="fas fa-rocket"></i>
+                            <span>Быстрый старт проектов</span>
+                        </div>
+                        <div class="info-item-premium">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Enterprise безопасность</span>
+                        </div>
+                        <div class="info-item-premium">
+                            <i class="fas fa-headset"></i>
+                            <span>Поддержка 24/7</span>
+                        </div>
+                    </div>
+
+                    <div class="info-section-premium">
+                        <h4>Последние обновления</h4>
+                        <div class="update-chip-premium">АПРЕЛЬ 2026</div>
+                        <p class="update-text-premium">Запуск новой платформы Benelux AI Engine.</p>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" id="email" required placeholder="your@email.com">
-            </div>
-            <div class="form-group">
-                <label data-i18n="form_phone">Номер телефон</label>
-                <input type="phone" id="phone" required placeholder="">
-            </div>
-            <div class="form-group">
-                <label data-i18n="form_company">Компания</label>
-                <input type="text" id="company" placeholder="">
-            </div>
-            <div class="form-group">
-                <label data-i18n="form_message">Сообщение</label>
-                <textarea id="message" required placeholder=""></textarea>
-            </div>
-            <button type="submit" class="btn-primary" data-i18n="form_submit">Отправить заявку</button>
-        </form>
+        </div>
+        
         <div class="success-message" id="successMessage" data-i18n="form_success">
             ✅ Спасибо за заявку! Мы свяжемся с вами в ближайшее время.
         </div>
@@ -728,6 +752,9 @@
             <div class="footer-legal">
                 <a href="#">Политика конфиденциальности</a>
                 <a href="#">Условия использования</a>
+            </div>
+            <div class="footer-watermark">
+                <img src="images/new-logo.png" alt="Benelux Watermark" class="watermark-logo">
             </div>
         </div>
     </footer>

@@ -7,6 +7,7 @@ const translations = {
         nav_team: 'Команда',
         nav_about: 'О нас',
         nav_testimonials: 'Отзывы',
+        nav_faq: 'FAQ',
         nav_contact: 'Контакты',
         nav_map: 'Карта',
         map_title: 'Карта',
@@ -121,6 +122,7 @@ const translations = {
         nav_team: 'Команда',
         nav_about: 'Біз туралы',
         nav_testimonials: 'Пікірлер',
+        nav_faq: 'FAQ',
         nav_contact: 'Байланыс',
         nav_map: 'Карта',
         map_title: 'Карта',
@@ -235,6 +237,7 @@ const translations = {
         nav_team: 'Team',
         nav_about: 'About',
         nav_testimonials: 'Testimonials',
+        nav_faq: 'FAQ',
         nav_contact: 'Contact',
         nav_map: 'Map',
         map_title: 'Map',
@@ -376,6 +379,26 @@ function changeLanguage(lang) {
     document.documentElement.lang = lang;
 
     showNotification(lang === 'ru' ? 'Язык изменён! 🌍' : lang === 'kk' ? 'Тіл өзгертілді! 🌍' : 'Language changed! 🌍');
+}
+
+// General Site Search
+function handleSearch(query) {
+    const q = query.toLowerCase().trim();
+    const sections = document.querySelectorAll('section');
+    
+    if (q === "") {
+        sections.forEach(s => s.style.display = 'block');
+        return;
+    }
+
+    sections.forEach(section => {
+        const text = section.innerText.toLowerCase();
+        if (text.includes(q)) {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
+        }
+    });
 }
 
 // Mobile Menu Toggle
@@ -616,12 +639,74 @@ document.querySelectorAll('.service-card, .stat-item, .project-card, .testimonia
     observer.observe(el);
 });
 
-// Close modal on outside click
-document.getElementById('serviceModal').addEventListener('click', function (e) {
-    if (e.target === this) {
-        closeModal('serviceModal');
+// FAQ Toggle Restoration
+function toggleFaq(element) {
+    const item = element.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Close all other items
+    document.querySelectorAll('.faq-item').forEach(otherItem => {
+        otherItem.classList.remove('active');
+        const otherIcon = otherItem.querySelector('.faq-icon i');
+        if (otherIcon) otherIcon.className = 'fas fa-plus';
+    });
+
+    if (!isActive) {
+        item.classList.add('active');
+        const icon = element.querySelector('.faq-icon i');
+        if (icon) icon.className = 'fas fa-minus';
     }
+}
+
+// 3D Hero Parallax Restoration
+document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.visual-card');
+    if (!cards.length) return;
+
+    const x = (window.innerWidth / 2 - e.pageX) / 35;
+    const y = (window.innerHeight / 2 - e.pageY) / 35;
+
+    cards.forEach((card, index) => {
+        const depth = (index + 1) * 5;
+        const rotateX = y + (index === 0 ? 10 : index === 1 ? 5 : -5);
+        const rotateY = -x + (index === 0 ? -15 : index === 1 ? 10 : -10);
+        const translateZ = (index === 0 ? 40 : index === 1 ? 10 : 60);
+        
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(${translateZ}px)`;
+    });
 });
+
+// Auto-Counter Animation Restoration
+function initCounters() {
+    const stats = document.querySelectorAll('.stat-main-large, .growth-value');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const countTo = parseInt(target.innerText);
+                let current = 0;
+                const duration = 2000;
+                const stepTime = Math.abs(Math.floor(duration / countTo));
+                
+                const timer = setInterval(() => {
+                    current += 1;
+                    target.innerText = current + (target.classList.contains('growth-value') ? '%' : '+');
+                    if (current >= countTo) {
+                        clearInterval(timer);
+                        target.innerText = countTo + (target.classList.contains('growth-value') ? '%' : '+');
+                    }
+                }, stepTime);
+                observer.unobserve(target);
+            }
+        });
+    });
+
+    stats.forEach(stat => observer.observe(stat));
+}
+
+document.addEventListener('DOMContentLoaded', initCounters);
+
+
 
 
 
