@@ -53,16 +53,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-#fx-canvas {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    pointer-events: none;
-    opacity: 0.7;
-    filter: saturate(1.08);
-}
+
 
 .fx-vignette {
     position: fixed;
@@ -76,11 +67,7 @@ body {
     opacity: 0.9;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    #fx-canvas {
-        display: none;
-    }
-}
+
 
 header {
     position: fixed;
@@ -198,6 +185,12 @@ nav {
     width: 220px;
 }
 
+@media (max-width: 1024px) {
+    .search-bar-premium {
+        display: none;
+    }
+}
+
 .search-bar-premium:focus-within {
     background: rgba(255, 255, 255, 0.08);
     border-color: var(--brand-1);
@@ -222,6 +215,8 @@ nav {
 .search-bar-premium input::placeholder {
     color: var(--muted-2);
 }
+
+
 
 .nav-links {
     display: flex;
@@ -313,29 +308,7 @@ nav {
         gap: 10px;
     }
 
-    .search-bar-mobile {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 12px 15px;
-        margin: 20px 0;
-    }
 
-    .search-bar-mobile i {
-        color: var(--brand-1);
-        margin-right: 12px;
-    }
-
-    .search-bar-mobile input {
-        background: transparent;
-        border: none;
-        color: #fff;
-        width: 100%;
-        outline: none;
-    }
 
     .nav-center {
         position: fixed;
@@ -3378,70 +3351,144 @@ p {
 }
 
 /* Restored Dashboard Section */
-#info-section {
-    padding: var(--pad-y) var(--pad-x);
-    background: var(--bg-2);
+/* ==========================================================================
+   INFO HUB (COMBINED PROCESS & FAQ)
+   ========================================================================== */
+.info-hub-section {
+    padding: 100px 5%;
+    background: var(--bg);
     position: relative;
 }
 
-#info-section::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(circle, rgba(149, 180, 21, 0.05) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    max-width: var(--container);
+.info-hub-container {
+    max-width: 1400px;
     margin: 0 auto;
-    align-items: stretch;
 }
 
-.info-column {
+.info-hub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.text-left { text-align: left !important; }
+
+/* Pulse Timeline (Process) */
+.pulse-timeline {
     display: flex;
     flex-direction: column;
+    gap: 40px;
+    margin-top: 50px;
+    position: relative;
+    padding-left: 20px;
 }
 
-.info-column .section-title {
-    text-align: left;
-    margin-bottom: 40px;
+.pulse-timeline::before {
+    content: '';
+    position: absolute;
+    left: 45px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--brand-1), var(--brand-2), transparent);
+    opacity: 0.2;
 }
 
-/* Updated Process in Dashboard */
-.info-column .process-steps {
-    display: grid;
-    gap: 20px;
-}
-
-.info-column .step-card {
+.pulse-step {
     display: flex;
-    gap: 25px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 30px;
+    align-items: center;
     transition: all 0.3s ease;
 }
 
-.info-column .step-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(149, 180, 21, 0.3);
-    transform: translateX(10px);
+.pulse-marker {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background: var(--bg-2);
+    border: 2px solid var(--brand-1);
+    color: var(--brand-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    box-shadow: 0 0 20px rgba(149, 180, 21, 0.2);
+    position: relative;
+    z-index: 2;
 }
 
-.info-column .step-number {
-    font-size: 24px;
-    font-weight: 800;
+.pulse-step:hover .pulse-marker {
+    background: var(--brand-1);
+    color: #000;
+    box-shadow: 0 0 30px rgba(149, 180, 21, 0.5);
+    transform: scale(1.1);
+}
+
+.pulse-content h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.pulse-content p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* FAQ Hub (Compact Accordion) */
+.faq-list-hub {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.faq-header-hub {
+    padding: 22px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.faq-header-hub i {
+    font-size: 14px;
     color: var(--brand-1);
-    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.faq-item-premium.active .faq-header-hub {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--brand-1);
+    color: var(--brand-1);
+}
+
+.faq-item-premium.active .faq-header-hub i {
+    transform: rotate(45deg);
+}
+
+.faq-body-content {
+    padding: 15px 28px 25px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+    .info-hub-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
 }
 
 /* Watermark */

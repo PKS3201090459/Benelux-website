@@ -401,6 +401,8 @@ function handleSearch(query) {
     });
 }
 
+
+
 // Mobile Menu Toggle
 function toggleMenu() {
     const navCenter = document.getElementById('navCenter');
@@ -758,7 +760,7 @@ async function sendToTelegram(formData) {
 document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contactForm");
     const successMessage = document.getElementById("successMessage");
-    initSciFiParticlesStatic();
+
 
     if (contactForm) {
         // скрываем сообщение при загрузке
