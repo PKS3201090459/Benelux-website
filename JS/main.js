@@ -37,10 +37,8 @@ const translations = {
         service_web_desc: 'Создаём высокопроизводительные веб-приложения и сайты с современным дизайном и безупречной функциональностью',
         service_mobile_title: 'Мобильные приложения',
         service_mobile_desc: 'Разрабатываем интуитивные кроссплатформенные и нативные приложения для iOS и Android.',
-        service_cloud_title: 'Облачные решения',
-        service_cloud_desc: 'Проектируем безопасную и отказоустойчивую облачную инфраструктуру, готовую к любым нагрузкам.',
-        service_ai_title: 'AI & Machine Learning',
-        service_ai_desc: 'Внедряем нейросети и алгоритмы машинного обучения для автоматизации и масштабирования вашего бизнеса.',
+        service_desktop_title: 'Программы для настольных ПК',
+        service_desktop_desc: 'Разрабатываем надежные и производительные десктопные приложения для автоматизации рабочих процессов.',
         service_security_title: 'Кибербезопасность',
         service_security_desc: 'Обеспечиваем комплексную защиту ваших данных и инфраструктуры',
         service_analytics_title: 'Аналитика данных',
@@ -64,8 +62,8 @@ const translations = {
         team_member1_name: 'Кирилл Пилипенко',
         team_member1_role: 'CEO & Основатель',
         team_member1_bio: 'Определяет вектор развития BENELUX и формирует команду экспертов для реализации инновационных проектов.',
-        team_member2_name: 'Наталья Ищенко',
-        team_member2_role: 'Со-руководитель',
+        team_member2_name: 'Ерлан Аймуканов',
+        team_member2_role: 'Главный разработчик',
         team_member2_bio: 'Отвечает за эффективность внутренних процессов и успешное завершение всех ключевых проектов.',
         team_member3_name: 'Владислав Тугуши',
         team_member3_role: 'Специалист по кибербезопасности',
@@ -73,15 +71,15 @@ const translations = {
         team_member6_name: 'Мариам Рогушева',
         team_member6_role: 'Дизайнер',
         team_member6_bio: 'Превращает сложные идеи в интуитивно понятные и эстетически привлекательные интерфейсы.',
-        team_member7_name: 'Ерлан Аймуканов',
-        team_member7_role: 'Тестировщик',
-        team_member7_bio: 'Обеспечивает безупречную работу продукта, выявляя и устраняя критические ошибки до релиза.',
+        team_member7_name: 'Наталья Ищенко',
+        team_member7_role: 'Со-руководитель',
+        team_member7_bio: 'Отвечает за эффективность внутренних процессов и успех проектов.',
         team_member8_name: 'Карабура Айтжанов',
         team_member8_role: 'SMM-специалист',
         team_member8_bio: 'Управляет присутствием BENELUX в социальных сетях, строит сообщество и привлекает целевую аудиторию.',
         team_member9_name: 'Акнур Аскарова',
-        team_member9_role: 'Backend-разработчик',
-        team_member9_bio: 'Отвечает за проектирование баз данных и оптимизацию серверной логики для поддержания высокой масштабируемости проектов.',
+        team_member9_role: 'Специалист по ИИ',
+        team_member9_bio: 'Создает и внедряет интеллектуальные модели для автоматизации бизнес-процессов.',
         about_title1: 'О компании',
         about_text1: 'Мы — команда профессионалов, специализирующихся на разработке инновационных IT-решений. Наша миссия — помогать компаниям достигать своих целей через технологии.',
         about_text2: 'С момента основания мы реализовали более 150 успешных проектов для клиентов по всему миру, от стартапов до крупных корпораций.',
@@ -157,10 +155,8 @@ const translations = {
         service_web_desc: 'Заманауи дизайн мен мінсіз функционалдылығы бар жоғары өнімді веб-қосымшалар мен сайттар жасаймыз',
         service_mobile_title: 'Мобильді қосымшалар',
         service_mobile_desc: 'iOS және Android үшін интуитивті кроссплатформалық және нативті қосымшалар әзірлейміз.',
-        service_cloud_title: 'Бұлттық шешімдер',
-        service_cloud_desc: 'Кез келген жүктемеге дайын, қауіпсіз және ақауларға төзімді бұлттық инфрақұрылымды жобалаймыз.',
-        service_ai_title: 'AI & Machine Learning',
-        service_ai_desc: 'Бизнесіңізді автоматтандыру және масштабтау үшін нейрондық желілер мен машиналық оқыту алгоритмдерін енгіземіз.',
+        service_desktop_title: 'Үстел компьютерлеріне арналған бағдарламалар',
+        service_desktop_desc: 'Жұмыс процестерін автоматтандыру үшін сенімді және өнімді десктоптық қосымшаларды әзірлейміз.',
         service_security_title: 'Киберқауіпсіздік',
         service_security_desc: 'Деректеріңіз бен инфрақұрылымыңызды кешенді қорғауды қамтамасыз етеміз',
         service_analytics_title: 'Деректерді талдау',
@@ -185,7 +181,7 @@ const translations = {
         team_member1_role: 'Бас директор және Негізін қалаушы',
         team_member1_bio: 'BENELUX-тің даму векторын анықтайды және инновациялық жобаларды жүзеге асыру үшін сарапшылар тобын қалыптастырады.',
         team_member2_name: 'Наталья Ищенко',
-        team_member2_role: 'Қосалқы басшы',
+        team_member2_role: 'Бас әзірлеуші',
         team_member2_bio: 'Ішкі процестердің тиімділігіне және барлық негізгі жобалардың сәтті аяқталуына жауап береді.',
         team_member3_name: 'Владислав Тугуши',
         team_member3_role: 'Киберқауіпсіздік маманы',
@@ -194,14 +190,14 @@ const translations = {
         team_member6_role: 'Дизайнер',
         team_member6_bio: 'Күрделі идеяларды интуитивті түсінікті және эстетикалық тартымды интерфейстерге айналдырады.',
         team_member7_name: 'Ерлан Аймуканов',
-        team_member7_role: 'Тестілеуші',
-        team_member7_bio: 'Өнімнің мінсіз жұмыс істеуін қамтамасыз етеді, шығарылымға дейін маңызды қателерді анықтайды және жояды.',
+        team_member7_role: 'Қосалқы басшы',
+        team_member7_bio: 'Ішкі процестердің тиімділігі мен жобалардың сәттілігіне жауап береді.',
         team_member8_name: 'Карабура Айтжанов',
         team_member8_role: 'SMM-маман',
         team_member8_bio: 'BENELUX-тің әлеуметтік желілердегі қатысуын басқарады, қоғамдастық құрады және мақсатты аудиторияны тартады.',
         team_member9_name: 'Акнур Аскарова',
-        team_member9_role: 'Backend-әзірлеуші',
-        team_member9_bio: 'Жобалардың жоғары масштабталуын қолдау үшін дерекқорларды жобалауға және серверлік логиканы оңтайландыруға жауап береді.',
+        team_member9_role: 'Жасанды интеллект маманы',
+        team_member9_bio: 'Бизнес-процестерді автоматтандыру үшін зияткерлік модельдерді жасайды және енгізеді.',
         about_title1: 'Компания туралы',
         about_text1: 'Біз инновациялық IT-шешімдерді әзірлеуге маманданған кәсіпқойлар командасымыз. Біздің миссиямыз - компанияларға технологиялар арқылы мақсаттарына жетуге көмектесу.',
         about_text2: 'Құрылған күннен бастап біз бүкіл әлем бойынша клиенттер үшін 150-ден астам сәтті жобаларды іске асырдық, стартаптардан ірі корпорацияларға дейін.',
@@ -277,10 +273,8 @@ const translations = {
         service_web_desc: 'We create high-performance web applications and websites with modern design and flawless functionality',
         service_mobile_title: 'Mobile Applications',
         service_mobile_desc: 'We develop intuitive cross-platform and native applications for iOS and Android.',
-        service_cloud_title: 'Cloud Solutions',
-        service_cloud_desc: 'We design secure and fault-tolerant cloud infrastructure, ready for any workload.',
-        service_ai_title: 'AI & Machine Learning',
-        service_ai_desc: 'We implement neural networks and machine learning algorithms to automate and scale your business.',
+        service_desktop_title: 'Desktop Applications',
+        service_desktop_desc: 'We develop reliable and high-performance desktop applications to automate workflows.',
         service_security_title: 'Cybersecurity',
         service_security_desc: 'We provide comprehensive protection of your data and infrastructure',
         service_analytics_title: 'Data Analytics',
@@ -305,7 +299,7 @@ const translations = {
         team_member1_role: 'CEO & Founder',
         team_member1_bio: 'Defines BENELUX’s development vector and forms a team of experts to implement innovative projects.',
         team_member2_name: 'Yerlan Aymukanov',
-        team_member2_role: 'Co-Head',
+        team_member2_role: 'Lead Developer',
         team_member2_bio: 'Responsible for the efficiency of internal processes and the successful completion of all key projects.',
         team_member3_name: 'Vladislav Tugushi',
         team_member3_role: 'Cybersecurity Specialist',
@@ -320,14 +314,14 @@ const translations = {
         team_member6_role: 'Designer',
         team_member6_bio: 'Transforms complex ideas into intuitively clear and aesthetically appealing interfaces.',
         team_member7_name: 'Natalia Ishchenko',
-        team_member7_role: 'Tester',
-        team_member7_bio: 'Ensures flawless product operation by identifying and eliminating critical errors before release.',
+        team_member7_role: 'Co-Head',
+        team_member7_bio: 'Responsible for internal processes efficiency and project success.',
         team_member8_name: 'Saltanat Yerkingali',
         team_member8_role: 'SMM Specialist',
         team_member8_bio: 'Manages BENELUX’s social media presence, builds community, and attracts the target audience.',
         team_member9_name: 'Artem Kursaev',
-        team_member9_role: 'Backend Developer',
-        team_member9_bio: 'Responsible for database design and server logic optimization to maintain high project scalability.',
+        team_member9_role: 'AI Specialist',
+        team_member9_bio: 'Creates and implements intelligent models to automate business processes.',
         about_title1: 'About',
         about_text1: 'We are a team of professionals specializing in innovative IT solutions development. Our mission is to help companies achieve their goals through technology.',
         about_text2: 'Since our founding, we have completed over 150 successful projects for clients worldwide, from startups to large corporations.',
@@ -439,7 +433,7 @@ function initHeroStack() {
         cards.forEach((card, i) => {
             // Clear all classes
             card.classList.remove('active-card', 'next-card', 'back-card', 'out-card');
-            
+
             if (i === currentIndex) {
                 card.classList.add('active-card');
             } else if (i === (currentIndex + 1) % cards.length) {
@@ -474,7 +468,7 @@ function initHeroStack() {
 
     stack.addEventListener('mouseenter', stopAutoPlay);
     stack.addEventListener('mouseleave', startAutoPlay);
-    
+
     // Add tap-to-cycle for mobile/touch devices
     stack.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
@@ -496,17 +490,17 @@ function initHeroStack() {
 // FAQ Accordion Logic
 function initFaq() {
     const faqHeaders = document.querySelectorAll('.faq-header');
-    
+
     faqHeaders.forEach(header => {
         header.addEventListener('click', () => {
             const currentItem = header.parentElement;
             const isActive = currentItem.classList.contains('active');
-            
+
             // Close all other FAQ items
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
             });
-            
+
             // Toggle current item
             if (!isActive) {
                 currentItem.classList.add('active');
@@ -523,84 +517,84 @@ let searchDebounceTimer;
 // Build index from actual DOM content
 function buildSearchIndex() {
     const items = [];
-    
+
     // Sections & Headers
     document.querySelectorAll('section[id]').forEach(section => {
         // Try to find a title: .section-title, then any h2, then h1, then ID
         let title = section.querySelector('.section-title, h2, h1')?.innerText || section.id;
         title = title.replace(/\n/g, ' ').trim();
-        
-        items.push({ 
-            title: title, 
-            category: currentLang === 'ru' ? 'Раздел' : currentLang === 'kk' ? 'Бөлім' : 'Section', 
-            id: section.id, 
-            icon: 'fa-layer-group' 
+
+        items.push({
+            title: title,
+            category: currentLang === 'ru' ? 'Раздел' : currentLang === 'kk' ? 'Бөлім' : 'Section',
+            id: section.id,
+            icon: 'fa-layer-group'
         });
     });
 
     // Services
     document.querySelectorAll('.service-card').forEach(card => {
         const title = card.querySelector('h3')?.innerText;
-        if (title) items.push({ 
-            title, 
-            category: currentLang === 'ru' ? 'Услуга' : currentLang === 'kk' ? 'Қызмет' : 'Service', 
-            id: 'services', 
-            icon: 'fa-laptop-code' 
+        if (title) items.push({
+            title,
+            category: currentLang === 'ru' ? 'Услуга' : currentLang === 'kk' ? 'Қызмет' : 'Service',
+            id: 'services',
+            icon: 'fa-laptop-code'
         });
     });
 
     // Projects
     document.querySelectorAll('.project-card').forEach(card => {
         const title = card.querySelector('h3')?.innerText;
-        if (title) items.push({ 
-            title, 
-            category: currentLang === 'ru' ? 'Проект' : currentLang === 'kk' ? 'Жоба' : 'Project', 
-            id: 'projects', 
-            icon: 'fa-rocket' 
+        if (title) items.push({
+            title,
+            category: currentLang === 'ru' ? 'Проект' : currentLang === 'kk' ? 'Жоба' : 'Project',
+            id: 'projects',
+            icon: 'fa-rocket'
         });
     });
 
     // Team
     document.querySelectorAll('.team-member').forEach(member => {
         const title = member.querySelector('.team-name')?.innerText;
-        if (title) items.push({ 
-            title, 
-            category: currentLang === 'ru' ? 'Команда' : currentLang === 'kk' ? 'Команда' : 'Team', 
-            id: 'team', 
-            icon: 'fa-users' 
+        if (title) items.push({
+            title,
+            category: currentLang === 'ru' ? 'Команда' : currentLang === 'kk' ? 'Команда' : 'Team',
+            id: 'team',
+            icon: 'fa-users'
         });
     });
 
     // FAQ Items
     document.querySelectorAll('.faq-item-premium').forEach(faq => {
         const title = faq.querySelector('.faq-header-hub span')?.innerText;
-        if (title) items.push({ 
-            title, 
-            category: currentLang === 'ru' ? 'Вопрос' : currentLang === 'kk' ? 'Сұрақ' : 'FAQ', 
-            id: 'info-hub', 
-            icon: 'fa-question-circle' 
+        if (title) items.push({
+            title,
+            category: currentLang === 'ru' ? 'Вопрос' : currentLang === 'kk' ? 'Сұрақ' : 'FAQ',
+            id: 'info-hub',
+            icon: 'fa-question-circle'
         });
     });
 
     // Process Steps
     document.querySelectorAll('.pulse-step').forEach(step => {
         const title = step.querySelector('h3')?.innerText;
-        if (title) items.push({ 
-            title, 
-            category: currentLang === 'ru' ? 'Процесс' : currentLang === 'kk' ? 'Процесс' : 'Process', 
-            id: 'info-hub', 
-            icon: 'fa-list-ol' 
+        if (title) items.push({
+            title,
+            category: currentLang === 'ru' ? 'Процесс' : currentLang === 'kk' ? 'Процесс' : 'Process',
+            id: 'info-hub',
+            icon: 'fa-list-ol'
         });
     });
 
     // Contact Info (Granular)
     document.querySelectorAll('.info-item-premium').forEach(info => {
         const text = info.querySelector('span')?.innerText;
-        if (text && text.length > 3) items.push({ 
-            title: text, 
-            category: currentLang === 'ru' ? 'Контакт' : currentLang === 'kk' ? 'Байланыс' : 'Contact', 
-            id: 'contact', 
-            icon: 'fa-info-circle' 
+        if (text && text.length > 3) items.push({
+            title: text,
+            category: currentLang === 'ru' ? 'Контакт' : currentLang === 'kk' ? 'Байланыс' : 'Contact',
+            id: 'contact',
+            icon: 'fa-info-circle'
         });
     });
 
@@ -688,8 +682,8 @@ function handleSearch(query, dropdown) {
     }
 
     // Refresh index to ensure translations are correct
-    const currentResults = searchIndex.filter(item => 
-        item.title.toLowerCase().includes(q) || 
+    const currentResults = searchIndex.filter(item =>
+        item.title.toLowerCase().includes(q) ||
         item.category.toLowerCase().includes(q)
     ).slice(0, 8); // Limit results
 
@@ -725,7 +719,7 @@ function renderSearchResults(results, dropdown) {
 // Initialize all components on load
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Benelux AI: Initializing components...');
-    
+
     // Set initial language from HTML attribute or default
     const initialLang = document.documentElement.lang || 'ru';
     currentLang = initialLang;
@@ -746,7 +740,7 @@ function toggleMenu() {
     const hamburger = document.getElementById('hamburger');
     const isActive = navCenter.classList.toggle('active');
     hamburger.classList.toggle('active');
-    
+
     // Lock/Unlock body scroll
     document.body.style.overflow = isActive ? 'hidden' : '';
 }
@@ -808,25 +802,10 @@ const serviceContent = {
         kk: { title: '📱 Мобильді қосымшалар', description: 'iOS және Android үшін native және cross-platform қосымшалар әзірлейміз.', features: ['Native әзірлеу (Swift, Kotlin)', 'Cross-platform шешімдер', 'Интуитивті UX/UI дизайн', 'Push-хабарламалар', 'Офлайн режимі', 'Құрылғылармен интеграция'] },
         en: { title: '📱 Mobile Applications', description: 'We develop native and cross-platform applications for iOS and Android.', features: ['Native development (Swift, Kotlin)', 'Cross-platform solutions', 'Intuitive UX/UI design', 'Push notifications', 'Offline mode', 'Device integration'] }
     },
-    cloud: {
-        ru: { title: '☁️ Облачные решения', description: 'Проектируем и внедряем масштабируемую облачную инфраструктуру.', features: ['AWS, Azure, Google Cloud', 'Контейнеризация (Docker, Kubernetes)', 'CI/CD автоматизация', 'Мониторинг и логирование', 'Масштабируемость', 'Резервное копирование'] },
-        kk: { title: '☁️ Бұлттық шешімдер', description: 'Масштабталатын бұлттық инфрақұрылымды жобалаймыз және енгіземіз.', features: ['AWS, Azure, Google Cloud', 'Контейнерлеу (Docker, Kubernetes)', 'CI/CD автоматтандыру', 'Мониторинг және логирование', 'Масштабталушылық', 'Сақтық көшірме'] },
-        en: { title: '☁️ Cloud Solutions', description: 'We design and implement scalable cloud infrastructure.', features: ['AWS, Azure, Google Cloud', 'Containerization (Docker, Kubernetes)', 'CI/CD automation', 'Monitoring and logging', 'Scalability', 'Backup'] }
-    },
-    ai: {
-        ru: { title: '🤖 AI & Machine Learning', description: 'Интегрируем искусственный интеллект и машинное обучение.', features: ['Обработка естественного языка (NLP)', 'Компьютерное зрение', 'Предиктивная аналитика', 'Рекомендательные системы', 'Чат-боты и виртуальные ассистенты', 'Автоматизация процессов'] },
-        kk: { title: '🤖 AI & Machine Learning', description: 'Жасанды интеллект пен машиналық оқытуды біріктіреміз.', features: ['Табиғи тілді өңдеу (NLP)', 'Компьютерлік көру', 'Болжамды аналитика', 'Ұсыныс жүйелері', 'Чат-боттар және виртуалды көмекшілер', 'Процестерді автоматтандыру'] },
-        en: { title: '🤖 AI & Machine Learning', description: 'We integrate artificial intelligence and machine learning.', features: ['Natural Language Processing (NLP)', 'Computer Vision', 'Predictive Analytics', 'Recommendation Systems', 'Chatbots and Virtual Assistants', 'Process Automation'] }
-    },
-    security: {
-        ru: { title: '🔒 Кибербезопасность', description: 'Обеспечиваем комплексную защиту данных и инфраструктуры.', features: ['Аудит безопасности', 'Тестирование на проникновение', 'Шифрование данных', 'Защита от DDoS-атак', 'Двухфакторная аутентификация', 'Мониторинг угроз 24/7'] },
-        kk: { title: '🔒 Киберқауіпсіздік', description: 'Деректер мен инфрақұрылымды кешенді қорғауды қамтамасыз етеміз.', features: ['Қауіпсіздік аудиті', 'Енуге тестілеу', 'Деректерді шифрлау', 'DDoS-шабуылдардан қорғау', 'Екі факторлы аутентификация', 'Қауіптерді бақылау 24/7'] },
-        en: { title: '🔒 Cybersecurity', description: 'We provide comprehensive data and infrastructure protection.', features: ['Security Audit', 'Penetration Testing', 'Data Encryption', 'DDoS Protection', 'Two-Factor Authentication', 'Threat Monitoring 24/7'] }
-    },
-    analytics: {
-        ru: { title: '📊 Аналитика данных', description: 'Помогаем принимать решения на основе анализа данных.', features: ['Big Data обработка', 'Визуализация данных', 'Бизнес-аналитика (BI)', 'Прогнозирование трендов', 'A/B тестирование', 'Отчёты и дашборды'] },
-        kk: { title: '📊 Деректерді талдау', description: 'Деректерді талдау негізінде шешімдер қабылдауға көмектесеміз.', features: ['Big Data өңдеу', 'Деректерді визуализациялау', 'Бизнес-аналитика (BI)', 'Трендтерді болжау', 'A/B тестілеу', 'Есептер және дашбордтар'] },
-        en: { title: '📊 Data Analytics', description: 'We help make decisions based on data analysis.', features: ['Big Data Processing', 'Data Visualization', 'Business Intelligence (BI)', 'Trend Forecasting', 'A/B Testing', 'Reports and Dashboards'] }
+    desktop: {
+        ru: { title: '🖥️ Программы для ПК', description: 'Разрабатываем надежные десктопные приложения для автоматизации рабочих процессов.', features: ['Кроссплатформенная разработка', 'Высокая производительность', 'Интуитивный интерфейс', 'Интеграция с оборудованием', 'Сложные вычисления', 'Безопасное хранение данных'] },
+        kk: { title: '🖥️ ДК бағдарламалары', description: 'Жұмыс процестерін автоматтандыру үшін сенімді десктоптық қосымшаларды әзірлейміз.', features: ['Кроссплатформалық әзірлеу', 'Жоғары өнімділік', 'Интуитивті интерфейс', 'Жабдықпен интеграция', 'Күрделі есептеулер', 'Деректерді қауіпсіз сақтау'] },
+        en: { title: '🖥️ Desktop Applications', description: 'We develop reliable desktop applications to automate workflows.', features: ['Cross-platform development', 'High performance', 'Intuitive interface', 'Hardware integration', 'Complex computations', 'Secure data storage'] }
     }
 };
 
@@ -996,15 +975,15 @@ document.querySelectorAll('.service-card, .stat-item, .project-card, .testimonia
 (function () {
     let rafId = null;
     let mx = 0, my = 0;
-    document.addEventListener("mousemove", function(e) {
+    document.addEventListener("mousemove", function (e) {
         mx = e.clientX; my = e.clientY;
         if (rafId) return;
-        rafId = requestAnimationFrame(function() {
+        rafId = requestAnimationFrame(function () {
             const p1 = document.querySelector(".visual-card--p1");
             const p2 = document.querySelector(".visual-card--p2");
             const p3 = document.querySelector(".visual-card--p3");
             if (p1 && p2 && p3) {
-                const x = (window.innerWidth  / 2 - mx) / 60;
+                const x = (window.innerWidth / 2 - mx) / 60;
                 const y = (window.innerHeight / 2 - my) / 60;
                 // Base rotations match CSS, parallax adds delta
                 p1.style.transform = `rotate(-4deg) rotateX(${(y + 10).toFixed(2)}deg) rotateY(${(-x - 15).toFixed(2)}deg)`;
@@ -1030,7 +1009,7 @@ function initCounters() {
                 let current = 0;
                 const duration = 2000;
                 const stepTime = Math.abs(Math.floor(duration / countTo)) || 50;
-                
+
                 const timer = setInterval(() => {
                     current += 1;
                     target.innerText = current + (target.classList.contains('growth-value') ? '%' : '+');
