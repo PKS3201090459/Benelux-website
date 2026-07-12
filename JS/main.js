@@ -36,11 +36,11 @@ const translations = {
         service_web_title: 'Веб-разработка',
         service_web_desc: 'Создаём высокопроизводительные веб-приложения и сайты с современным дизайном и безупречной функциональностью',
         service_mobile_title: 'Мобильные приложения',
-        service_mobile_desc: 'Разрабатываем нативные и кроссплатформенные мобильные приложения для iOS и Android',
+        service_mobile_desc: 'Разрабатываем интуитивные кроссплатформенные и нативные приложения для iOS и Android.',
         service_cloud_title: 'Облачные решения',
-        service_cloud_desc: 'Проектируем и внедряем масштабируемую облачную инфраструктуру для вашего бизнеса',
+        service_cloud_desc: 'Проектируем безопасную и отказоустойчивую облачную инфраструктуру, готовую к любым нагрузкам.',
         service_ai_title: 'AI & Machine Learning',
-        service_ai_desc: 'Интегрируем искусственный интеллект и машинное обучение в ваши продукты',
+        service_ai_desc: 'Внедряем нейросети и алгоритмы машинного обучения для автоматизации и масштабирования вашего бизнеса.',
         service_security_title: 'Кибербезопасность',
         service_security_desc: 'Обеспечиваем комплексную защиту ваших данных и инфраструктуры',
         service_analytics_title: 'Аналитика данных',
@@ -113,7 +113,18 @@ const translations = {
         form_submit: 'Отправить заявку',
         form_success: '✅ Спасибо за заявку! Мы свяжемся с вами в ближайшее время.',
         footer_text: 'Инновационные IT-решения для вашего бизнеса',
-        footer_copyright: '© 2025 Benelux. Все права защищены.'
+        footer_copyright: '© 2025 Benelux. Все права защищены.',
+        site_title: 'Benelux - Инновационные IT-решения',
+        hero_highlight1: 'Архитектура класса Enterprise',
+        hero_highlight2: 'Безопасность на каждом уровне',
+        hero_highlight3: 'Оперативная поддержка 24/7',
+        search_placeholder: 'Поиск по сайту...',
+        nav_process: 'Инфо-центр',
+        footer_nav_title: 'Навигация',
+        footer_services_title: 'Услуги',
+        footer_contact_title: 'Связаться',
+        footer_desc: 'Мы создаем цифровые решения будущего. Инновационный подход к каждому проекту.',
+        no_results: 'Ничего не найдено'
     },
     kk: {
         nav_home: 'Басты бет',
@@ -151,11 +162,11 @@ const translations = {
         service_web_title: 'Веб-әзірлеу',
         service_web_desc: 'Заманауи дизайн мен мінсіз функционалдылығы бар жоғары өнімді веб-қосымшалар мен сайттар жасаймыз',
         service_mobile_title: 'Мобильді қосымшалар',
-        service_mobile_desc: 'iOS және Android үшін native және cross-platform мобильді қосымшалар әзірлейміз',
+        service_mobile_desc: 'iOS және Android үшін интуитивті кроссплатформалық және нативті қосымшалар әзірлейміз.',
         service_cloud_title: 'Бұлттық шешімдер',
-        service_cloud_desc: 'Бизнесіңіз үшін масштабталатын бұлттық инфрақұрылым жобалаймыз және енгіземіз',
+        service_cloud_desc: 'Кез келген жүктемеге дайын, қауіпсіз және ақауларға төзімді бұлттық инфрақұрылымды жобалаймыз.',
         service_ai_title: 'AI & Machine Learning',
-        service_ai_desc: 'Өнімдеріңізге жасанды интеллект пен машиналық оқытуды біріктіреміз',
+        service_ai_desc: 'Бизнесіңізді автоматтандыру және масштабтау үшін нейрондық желілер мен машиналық оқыту алгоритмдерін енгіземіз.',
         service_security_title: 'Киберқауіпсіздік',
         service_security_desc: 'Деректеріңіз бен инфрақұрылымыңызды кешенді қорғауды қамтамасыз етеміз',
         service_analytics_title: 'Деректерді талдау',
@@ -228,7 +239,18 @@ const translations = {
         form_submit: 'Өтінім жіберу',
         form_success: '✅ Өтініміңіз үшін рахмет! Біз жақын арада сізбен хабарласамыз.',
         footer_text: 'Бизнесіңіз үшін инновациялық IT-шешімдер',
-        footer_copyright: '© 2025 Benelux. Барлық құқықтар қорғалған.'
+        footer_copyright: '© 2025 Benelux. Барлық құқықтар қорғалған.',
+        site_title: 'Benelux - Инновациялық IT-шешімдер',
+        hero_highlight1: 'Enterprise деңгейіндегі архитектура',
+        hero_highlight2: 'Әр деңгейдегі қауіпсіздік',
+        hero_highlight3: 'Жедел қолдау 24/7',
+        search_placeholder: 'Сайт бойынша іздеу...',
+        nav_process: 'Инфо-орталық',
+        footer_nav_title: 'Навигация',
+        footer_services_title: 'Қызметтер',
+        footer_contact_title: 'Байланысу',
+        footer_desc: 'Біз болашақтың цифрлық шешімдерін жасаймыз. Әр жобаға инновациялық тәсіл.',
+        no_results: 'Ештеңе табылмады'
     },
     en: {
         nav_home: 'Home',
@@ -266,11 +288,11 @@ const translations = {
         service_web_title: 'Web Development',
         service_web_desc: 'We create high-performance web applications and websites with modern design and flawless functionality',
         service_mobile_title: 'Mobile Applications',
-        service_mobile_desc: 'We develop native and cross-platform mobile applications for iOS and Android',
+        service_mobile_desc: 'We develop intuitive cross-platform and native applications for iOS and Android.',
         service_cloud_title: 'Cloud Solutions',
-        service_cloud_desc: 'We design and implement scalable cloud infrastructure for your business',
+        service_cloud_desc: 'We design secure and fault-tolerant cloud infrastructure, ready for any workload.',
         service_ai_title: 'AI & Machine Learning',
-        service_ai_desc: 'We integrate artificial intelligence and machine learning into your products',
+        service_ai_desc: 'We implement neural networks and machine learning algorithms to automate and scale your business.',
         service_security_title: 'Cybersecurity',
         service_security_desc: 'We provide comprehensive protection of your data and infrastructure',
         service_analytics_title: 'Data Analytics',
@@ -343,7 +365,18 @@ const translations = {
         form_submit: 'Submit Request',
         form_success: '✅ Thank you for your request! We will contact you shortly.',
         footer_text: 'Innovative IT solutions for your business',
-        footer_copyright: '© 2025 Benelux. All rights reserved.'
+        footer_copyright: '© 2025 Benelux. All rights reserved.',
+        site_title: 'Benelux - Innovative IT Solutions',
+        hero_highlight1: 'Enterprise-grade Architecture',
+        hero_highlight2: 'Security at Every Level',
+        hero_highlight3: 'Operational Support 24/7',
+        search_placeholder: 'Search the site...',
+        nav_process: 'Info-hub',
+        footer_nav_title: 'Navigation',
+        footer_services_title: 'Services',
+        footer_contact_title: 'Contact',
+        footer_desc: 'We create digital solutions of the future. Innovative approach to every project.',
+        no_results: 'No results found'
     }
 };
 
@@ -375,31 +408,347 @@ function changeLanguage(lang) {
         }
     });
 
+    // Special case for mobile search placeholder if it doesn't have data-i18n or needs manual update
+    const mobileSearchInput = document.getElementById('siteSearchMobile');
+    if (mobileSearchInput && translations[lang].search_placeholder) {
+        mobileSearchInput.placeholder = translations[lang].search_placeholder;
+    }
+
     // Update HTML lang attribute
     document.documentElement.lang = lang;
+
+    // Update document title
+    if (translations[lang].site_title) {
+        document.title = translations[lang].site_title;
+    }
+
+    // Rebuild search index for the new language
+    if (typeof buildSearchIndex === 'function') {
+        searchIndex = buildSearchIndex();
+    }
 
     showNotification(lang === 'ru' ? 'Язык изменён! 🌍' : lang === 'kk' ? 'Тіл өзгертілді! 🌍' : 'Language changed! 🌍');
 }
 
-// General Site Search
-function handleSearch(query) {
-    const q = query.toLowerCase().trim();
-    const sections = document.querySelectorAll('section');
-    
-    if (q === "") {
-        sections.forEach(s => s.style.display = 'block');
+// --- Dynamic Hero Photo Stack Logic ---
+function initHeroStack() {
+    const stack = document.getElementById('heroStack');
+    if (!stack) {
+        console.warn('Hero stack container not found');
         return;
     }
 
-    sections.forEach(section => {
-        const text = section.innerText.toLowerCase();
-        if (text.includes(q)) {
-            section.style.display = 'block';
-        } else {
-            section.style.display = 'none';
+    const cards = Array.from(stack.querySelectorAll('.visual-card'));
+    if (cards.length === 0) {
+        console.warn('No cards found in Hero stack');
+        return;
+    }
+
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    function updateStack() {
+        cards.forEach((card, i) => {
+            // Clear all classes
+            card.classList.remove('active-card', 'next-card', 'back-card', 'out-card');
+            
+            if (i === currentIndex) {
+                card.classList.add('active-card');
+            } else if (i === (currentIndex + 1) % cards.length) {
+                card.classList.add('next-card');
+            } else if (i === (currentIndex + 2) % cards.length) {
+                card.classList.add('back-card');
+            } else {
+                card.classList.add('out-card');
+            }
+        });
+    }
+
+    function nextCard() {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateStack();
+    }
+
+    function startAutoPlay() {
+        // Auto-play interval - only on screens larger than mobile
+        if (window.innerWidth > 768) {
+            stopAutoPlay(); // Prevent duplicates
+            autoPlayInterval = setInterval(nextCard, 3000);
+        }
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+    }
+
+    stack.addEventListener('mouseenter', stopAutoPlay);
+    stack.addEventListener('mouseleave', startAutoPlay);
+    
+    // Add tap-to-cycle for mobile/touch devices
+    stack.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            nextCard();
+        }
+    });
+
+    // Handle window resize to start/stop autoplay
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 768) stopAutoPlay();
+        else if (!autoPlayInterval) startAutoPlay();
+    });
+
+    // Initial state
+    updateStack();
+    startAutoPlay();
+}
+
+// FAQ Accordion Logic
+function initFaq() {
+    const faqHeaders = document.querySelectorAll('.faq-header');
+    
+    faqHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const currentItem = header.parentElement;
+            const isActive = currentItem.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                currentItem.classList.add('active');
+            }
+        });
+    });
+}
+
+// --- Modern Site Search Logic ---
+let searchIndex = [];
+let selectedResultIndex = -1;
+let searchDebounceTimer;
+
+// Build index from actual DOM content
+function buildSearchIndex() {
+    const items = [];
+    
+    // Sections & Headers
+    document.querySelectorAll('section[id]').forEach(section => {
+        // Try to find a title: .section-title, then any h2, then h1, then ID
+        let title = section.querySelector('.section-title, h2, h1')?.innerText || section.id;
+        title = title.replace(/\n/g, ' ').trim();
+        
+        items.push({ 
+            title: title, 
+            category: currentLang === 'ru' ? 'Раздел' : currentLang === 'kk' ? 'Бөлім' : 'Section', 
+            id: section.id, 
+            icon: 'fa-layer-group' 
+        });
+    });
+
+    // Services
+    document.querySelectorAll('.service-card').forEach(card => {
+        const title = card.querySelector('h3')?.innerText;
+        if (title) items.push({ 
+            title, 
+            category: currentLang === 'ru' ? 'Услуга' : currentLang === 'kk' ? 'Қызмет' : 'Service', 
+            id: 'services', 
+            icon: 'fa-laptop-code' 
+        });
+    });
+
+    // Projects
+    document.querySelectorAll('.project-card').forEach(card => {
+        const title = card.querySelector('h3')?.innerText;
+        if (title) items.push({ 
+            title, 
+            category: currentLang === 'ru' ? 'Проект' : currentLang === 'kk' ? 'Жоба' : 'Project', 
+            id: 'projects', 
+            icon: 'fa-rocket' 
+        });
+    });
+
+    // Team
+    document.querySelectorAll('.team-member').forEach(member => {
+        const title = member.querySelector('.team-name')?.innerText;
+        if (title) items.push({ 
+            title, 
+            category: currentLang === 'ru' ? 'Команда' : currentLang === 'kk' ? 'Команда' : 'Team', 
+            id: 'team', 
+            icon: 'fa-users' 
+        });
+    });
+
+    // FAQ Items
+    document.querySelectorAll('.faq-item-premium').forEach(faq => {
+        const title = faq.querySelector('.faq-header-hub span')?.innerText;
+        if (title) items.push({ 
+            title, 
+            category: currentLang === 'ru' ? 'Вопрос' : currentLang === 'kk' ? 'Сұрақ' : 'FAQ', 
+            id: 'info-hub', 
+            icon: 'fa-question-circle' 
+        });
+    });
+
+    // Process Steps
+    document.querySelectorAll('.pulse-step').forEach(step => {
+        const title = step.querySelector('h3')?.innerText;
+        if (title) items.push({ 
+            title, 
+            category: currentLang === 'ru' ? 'Процесс' : currentLang === 'kk' ? 'Процесс' : 'Process', 
+            id: 'info-hub', 
+            icon: 'fa-list-ol' 
+        });
+    });
+
+    // Contact Info (Granular)
+    document.querySelectorAll('.info-item-premium').forEach(info => {
+        const text = info.querySelector('span')?.innerText;
+        if (text && text.length > 3) items.push({ 
+            title: text, 
+            category: currentLang === 'ru' ? 'Контакт' : currentLang === 'kk' ? 'Байланыс' : 'Contact', 
+            id: 'contact', 
+            icon: 'fa-info-circle' 
+        });
+    });
+
+    return items;
+}
+
+function initSearch() {
+    const desktopSearch = {
+        input: document.getElementById('siteSearch'),
+        dropdown: document.getElementById('searchDropdown')
+    };
+    const mobileSearch = {
+        input: document.getElementById('siteSearchMobile'),
+        dropdown: document.getElementById('searchDropdownMobile')
+    };
+
+    const setupInput = (searchObj) => {
+        if (!searchObj.input || !searchObj.dropdown) return;
+
+        searchObj.input.addEventListener('input', (e) => {
+            clearTimeout(searchDebounceTimer);
+            searchDebounceTimer = setTimeout(() => {
+                handleSearch(e.target.value, searchObj.dropdown);
+            }, 200);
+        });
+
+        searchObj.input.addEventListener('keydown', (e) => {
+            const items = searchObj.dropdown.querySelectorAll('.search-result-item');
+            if (!items.length) return;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                selectedResultIndex = (selectedResultIndex + 1) % items.length;
+                updateSelection(items);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                selectedResultIndex = (selectedResultIndex - 1 + items.length) % items.length;
+                updateSelection(items);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (selectedResultIndex > -1) {
+                    items[selectedResultIndex].click();
+                }
+            } else if (e.key === 'Escape') {
+                closeSearch(searchObj.dropdown);
+            }
+        });
+    };
+
+    setupInput(desktopSearch);
+    setupInput(mobileSearch);
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+        if (!desktopSearch.input?.contains(e.target) && !desktopSearch.dropdown?.contains(e.target) &&
+            !mobileSearch.input?.contains(e.target) && !mobileSearch.dropdown?.contains(e.target)) {
+            closeSearch(desktopSearch.dropdown);
+            closeSearch(mobileSearch.dropdown);
+        }
+    });
+
+    searchIndex = buildSearchIndex();
+}
+
+function updateSelection(items) {
+    items.forEach((item, index) => {
+        item.classList.toggle('selected', index === selectedResultIndex);
+        if (index === selectedResultIndex) {
+            item.scrollIntoView({ block: 'nearest' });
         }
     });
 }
+
+function closeSearch(dropdown) {
+    if (dropdown) dropdown.classList.remove('active');
+    selectedResultIndex = -1;
+}
+
+function handleSearch(query, dropdown) {
+    const q = query.toLowerCase().trim();
+
+    if (q.length < 2) {
+        dropdown.classList.remove('active');
+        return;
+    }
+
+    // Refresh index to ensure translations are correct
+    const currentResults = searchIndex.filter(item => 
+        item.title.toLowerCase().includes(q) || 
+        item.category.toLowerCase().includes(q)
+    ).slice(0, 8); // Limit results
+
+    renderSearchResults(currentResults, dropdown);
+    dropdown.classList.add('active');
+    selectedResultIndex = -1;
+}
+
+function renderSearchResults(results, dropdown) {
+    if (results.length === 0) {
+        dropdown.innerHTML = `
+            <div class="search-no-results">
+                <i class="fas fa-search-minus"></i>
+                <p>${translations[currentLang].no_results || 'No results found'}</p>
+            </div>
+        `;
+        return;
+    }
+
+    dropdown.innerHTML = results.map((item, index) => `
+        <a href="#${item.id}" class="search-result-item" onclick="closeMenu(); closeSearch(this.parentElement)">
+            <div class="search-result-icon">
+                <i class="fas ${item.icon}"></i>
+            </div>
+            <div class="search-result-info">
+                <div class="search-result-title">${item.title}</div>
+                <div class="search-result-category">${item.category}</div>
+            </div>
+        </a>
+    `).join('');
+}
+
+// Initialize all components on load
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Benelux AI: Initializing components...');
+    
+    // Set initial language from HTML attribute or default
+    const initialLang = document.documentElement.lang || 'ru';
+    currentLang = initialLang;
+
+    initHeroStack();
+    initSearch();
+    initFaq();
+
+    // Force apply initial translations and set page title
+    changeLanguage(currentLang);
+});
 
 
 
@@ -407,8 +756,11 @@ function handleSearch(query) {
 function toggleMenu() {
     const navCenter = document.getElementById('navCenter');
     const hamburger = document.getElementById('hamburger');
-    navCenter.classList.toggle('active');
+    const isActive = navCenter.classList.toggle('active');
     hamburger.classList.toggle('active');
+    
+    // Lock/Unlock body scroll
+    document.body.style.overflow = isActive ? 'hidden' : '';
 }
 
 function closeMenu() {
@@ -416,6 +768,7 @@ function closeMenu() {
     const hamburger = document.getElementById('hamburger');
     navCenter.classList.remove('active');
     hamburger.classList.remove('active');
+    document.body.style.overflow = '';
 }
 
 // Scroll to top
@@ -566,32 +919,41 @@ function updateTestimonialSlider() {
     const track = document.getElementById('testimonialsTrack');
     const dots = document.querySelectorAll('.slider-dot');
 
-    track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+    if (track) {
+        track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+    }
 
-    dots.forEach((dot, index) => {
-        if (index === currentTestimonial) {
-            dot.classList.add('active');
-        } else {
-            dot.classList.remove('active');
-        }
-    });
+    if (dots.length > 0) {
+        dots.forEach((dot, index) => {
+            if (index === currentTestimonial) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
 }
 
-// Auto-play testimonials
-let testimonialInterval = setInterval(() => {
-    changeTestimonial(1);
-}, 7000);
+// Auto-play testimonials only if slider exists
+let testimonialInterval;
+const trackExists = document.getElementById('testimonialsTrack');
 
-// Pause auto-play on hover
-document.querySelector('.testimonials-wrapper')?.addEventListener('mouseenter', () => {
-    clearInterval(testimonialInterval);
-});
-
-document.querySelector('.testimonials-wrapper')?.addEventListener('mouseleave', () => {
+if (trackExists) {
     testimonialInterval = setInterval(() => {
         changeTestimonial(1);
     }, 7000);
-});
+
+    // Pause auto-play on hover
+    document.querySelector('.testimonials-wrapper')?.addEventListener('mouseenter', () => {
+        clearInterval(testimonialInterval);
+    });
+
+    document.querySelector('.testimonials-wrapper')?.addEventListener('mouseleave', () => {
+        testimonialInterval = setInterval(() => {
+            changeTestimonial(1);
+        }, 7000);
+    });
+}
 
 // Form submission
 function handleSubmit(e) {
@@ -641,42 +1003,31 @@ document.querySelectorAll('.service-card, .stat-item, .project-card, .testimonia
     observer.observe(el);
 });
 
-// FAQ Toggle Restoration
-function toggleFaq(element) {
-    const item = element.parentElement;
-    const isActive = item.classList.contains('active');
-    
-    // Close all other items
-    document.querySelectorAll('.faq-item').forEach(otherItem => {
-        otherItem.classList.remove('active');
-        const otherIcon = otherItem.querySelector('.faq-icon i');
-        if (otherIcon) otherIcon.className = 'fas fa-plus';
-    });
 
-    if (!isActive) {
-        item.classList.add('active');
-        const icon = element.querySelector('.faq-icon i');
-        if (icon) icon.className = 'fas fa-minus';
-    }
-}
+// 3D Hero Parallax — rAF throttled (performance optimization)
+(function () {
+    let rafId = null;
+    let mx = 0, my = 0;
+    document.addEventListener("mousemove", function(e) {
+        mx = e.clientX; my = e.clientY;
+        if (rafId) return;
+        rafId = requestAnimationFrame(function() {
+            const p1 = document.querySelector(".visual-card--p1");
+            const p2 = document.querySelector(".visual-card--p2");
+            const p3 = document.querySelector(".visual-card--p3");
+            if (p1 && p2 && p3) {
+                const x = (window.innerWidth  / 2 - mx) / 60;
+                const y = (window.innerHeight / 2 - my) / 60;
+                // Base rotations match CSS, parallax adds delta
+                p1.style.transform = `rotate(-4deg) rotateX(${(y + 10).toFixed(2)}deg) rotateY(${(-x - 15).toFixed(2)}deg)`;
+                p2.style.transform = `rotate(1.5deg) rotateX(${(y + 5).toFixed(2)}deg) rotateY(${(-x + 10).toFixed(2)}deg)`;
+                p3.style.transform = `rotate(5deg) rotateX(${(y - 5).toFixed(2)}deg) rotateY(${(-x - 10).toFixed(2)}deg)`;
+            }
+            rafId = null;
+        });
+    }, { passive: true });
+})();
 
-// 3D Hero Parallax Restoration
-document.addEventListener('mousemove', (e) => {
-    const cards = document.querySelectorAll('.visual-card');
-    if (!cards.length) return;
-
-    const x = (window.innerWidth / 2 - e.pageX) / 35;
-    const y = (window.innerHeight / 2 - e.pageY) / 35;
-
-    cards.forEach((card, index) => {
-        const depth = (index + 1) * 5;
-        const rotateX = y + (index === 0 ? 10 : index === 1 ? 5 : -5);
-        const rotateY = -x + (index === 0 ? -15 : index === 1 ? 10 : -10);
-        const translateZ = (index === 0 ? 40 : index === 1 ? 10 : 60);
-        
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(${translateZ}px)`;
-    });
-});
 
 // Auto-Counter Animation Restoration
 function initCounters() {
@@ -686,9 +1037,11 @@ function initCounters() {
             if (entry.isIntersecting) {
                 const target = entry.target;
                 const countTo = parseInt(target.innerText);
+                if (isNaN(countTo)) return;
+
                 let current = 0;
                 const duration = 2000;
-                const stepTime = Math.abs(Math.floor(duration / countTo));
+                const stepTime = Math.abs(Math.floor(duration / countTo)) || 50;
                 
                 const timer = setInterval(() => {
                     current += 1;

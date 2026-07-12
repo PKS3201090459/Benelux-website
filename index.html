@@ -33,6 +33,12 @@
             </div>
             
             <div class="nav-center" id="navCenter">
+                <div class="search-bar-premium mobile-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="siteSearchMobile" placeholder="Поиск..." data-i18n="search_placeholder">
+                    <div id="searchDropdownMobile" class="search-dropdown"></div>
+                </div>
+
                 <ul class="nav-links">
                     <li><a href="#home" onclick="closeMenu()" data-i18n="nav_home">Главная</a></li>
                     <li><a href="#services" onclick="closeMenu()" data-i18n="nav_services">Услуги</a></li>
@@ -55,7 +61,8 @@
             <div class="nav-right-container">
                 <div class="search-bar-premium">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="siteSearch" placeholder="Поиск по сайту..." oninput="handleSearch(this.value)">
+                    <input type="text" id="siteSearch" placeholder="Поиск по сайту..." data-i18n="search_placeholder">
+                    <div id="searchDropdown" class="search-dropdown"></div>
                 </div>
                 <div class="language-switcher-desktop">
                     <button class="lang-btn active" id="langRu" onclick="changeLanguage('ru')">RU</button>
@@ -73,6 +80,9 @@
     </header>
 
     <section class="hero" id="home">
+        <div class="hero-watermark" aria-hidden="true">
+            <img src="images/new-logo.png" alt="Benelux Logo Watermark">
+        </div>
         <div class="hero-content">
             <div class="hero-layout">
                 <div class="hero-copy">
@@ -86,9 +96,9 @@
                     <p data-i18n="hero_subtitle">Создаём современные цифровые продукты, которые трансформируют индустрии
                     </p>
                     <div class="hero-highlights">
-                        <span>Архитектура класса Enterprise</span>
-                        <span>Безопасность на каждом уровне</span>
-                        <span>Оперативная поддержка 24/7</span>
+                        <span data-i18n="hero_highlight1">Архитектура класса Enterprise</span>
+                        <span data-i18n="hero_highlight2">Безопасность на каждом уровне</span>
+                        <span data-i18n="hero_highlight3">Оперативная поддержка 24/7</span>
                     </div>
                     <div class="cta-buttons">
                         <a href="#contact" class="btn-primary" data-i18n="hero_btn1">Начать проект</a>
@@ -98,36 +108,29 @@
 
                 <div class="hero-visual" aria-hidden="true">
                     <div class="visual-glow"></div>
-                    <div class="visual-stack">
-                        <div class="visual-card visual-card--top">
-                            <div class="visual-card-header">
-                                <div class="visual-badge">
-                                    <img src="images/new-logo.png" alt="Benelux" class="visual-logo">
-                                </div>
-                                <div class="visual-status">Live</div>
+                    <div class="visual-stack" id="heroStack">
+                        <div class="visual-card">
+                            <img class="vc-photo" src="images/11.jpg" alt="Команда Benelux">
+                            <div class="vc-overlay">
+                                <div class="vc-badge"><i class="fas fa-microchip"></i> AI Dev Team</div>
                             </div>
-                            <div class="tech-stack-ui">
-                                <div class="tech-item neon-react" title="React"><i class="fab fa-react"></i></div>
-                                <div class="tech-item neon-python" title="Python"><i class="fab fa-python"></i></div>
-                                <div class="tech-item neon-aws" title="AWS"><i class="fab fa-aws"></i></div>
-                                <div class="tech-item neon-docker" title="Docker"><i class="fab fa-docker"></i></div>
-                            </div>
-                            <div class="card-footer-text">Advanced IT Stack</div>
                         </div>
 
-                        <div class="visual-card visual-card--bot">
-                            <div class="stat-content">
-                                <div class="stat-main-large">100+</div>
-                                <div class="stat-label-large">проектов</div>
-                            </div>
-                            <div class="stat-badge-premium">
-                                <i class="fas fa-handshake"></i>
-                                <span>Expert Partnership</span>
-                            </div>
-                            <div class="progress-container-premium">
-                                <div class="progress-fill-premium"></div>
+                        <div class="visual-card">
+                            <img class="vc-photo" src="images/12.jpg" alt="Команда Benelux">
+                            <div class="vc-overlay">
+                                <div class="vc-badge"><i class="fas fa-users"></i> Benelux Culture</div>
                             </div>
                         </div>
+
+                        <div class="visual-card">
+                            <img class="vc-photo" src="images/13.jpg" alt="Команда Benelux">
+                            <div class="vc-overlay">
+                                <div class="vc-badge"><i class="fas fa-trophy"></i> DigiEduHack 2023</div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -146,7 +149,7 @@
                         <span class="service-icon"><i class="fas fa-laptop-code"></i></span>
                     </div>
                     <h3 data-i18n="service_web_title">Веб-разработка</h3>
-                    <p data-i18n="service_web_desc">Создаём высокопроизводительные веб-приложения и сайты с современным дизайном.</p>
+                    <p class="service-desc" data-i18n="service_web_desc">Создаём высокопроизводительные веб-приложения и сайты с современным дизайном.</p>
                 </div>
             </div>
             <div class="service-card bento-item bento-item--small" onclick="openModal('ai')" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop');">
@@ -157,6 +160,7 @@
                         <span class="service-icon"><i class="fas fa-brain"></i></span>
                     </div>
                     <h3 data-i18n="service_ai_title">AI & ML</h3>
+                    <p class="service-desc" data-i18n="service_ai_desc">Внедряем нейросети и алгоритмы машинного обучения для автоматизации и масштабирования вашего бизнеса.</p>
                 </div>
             </div>
             <div class="service-card bento-item bento-item--medium" onclick="openModal('cloud')" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop');">
@@ -167,6 +171,7 @@
                         <span class="service-icon"><i class="fas fa-cloud"></i></span>
                     </div>
                     <h3 data-i18n="service_cloud_title">Cloud Systems</h3>
+                    <p class="service-desc" data-i18n="service_cloud_desc">Проектируем безопасную и отказоустойчивую облачную инфраструктуру, готовую к любым нагрузкам.</p>
                 </div>
             </div>
             <div class="service-card bento-item bento-item--wide" onclick="openModal('mobile')" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop');">
@@ -177,6 +182,7 @@
                         <span class="service-icon"><i class="fas fa-mobile-alt"></i></span>
                     </div>
                     <h3 data-i18n="service_mobile_title">Mobile Dev</h3>
+                    <p class="service-desc" data-i18n="service_mobile_desc">Разрабатываем интуитивные кроссплатформенные и нативные приложения для iOS и Android.</p>
                 </div>
             </div>
         </div>
@@ -201,6 +207,7 @@
                         <h3 id="cityCardName" class="city-card-name"></h3>
                         <p class="city-card-detail" id="cityCardAddress"></p>
                         <p class="city-card-detail" id="cityCardPhone"></p>
+                        <div id="cityCardDG"></div>
                     </div>
                 </div>
             </div>
@@ -292,27 +299,11 @@
                 <div class="project-info">
                     <span class="project-category" data-i18n="filter_web">Веб-разработка</span>
                     <h3>Ai-LessonPlanner</h3>
-                    <p data-i18n="project_dashboard_desc">Платформа для генерации учебного плана для проведения занятий
-                        ученикам и студентам</p>
+                    <p data-i18n="project_dashboard_desc">Платформа для генерации учебного плана для проведения занятий ученикам и студентам</p>
                     <div class="project-tech">
                         <span class="tech-tag">HTML/CSS/JS</span>
                         <span class="tech-tag">Google Forms</span>
                         <span class="tech-tag">Google Ai</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card" data-category="mobile">
-                <div class="project-image">
-                    <img src="images/4.png" alt="Фото">
-                </div>
-                <div class="project-info">
-                    <span class="project-category" data-i18n="filter_mobile">Мобильные</span>
-                    <h3>QazaqSteps</h3>
-                    <p data-i18n="project_fitness_desc">Мобильное приложение для туризма по городам
-                        Актобе и Костанай</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Expo Go</span>
                     </div>
                 </div>
             </div>
@@ -323,8 +314,7 @@
                 <div class="project-info">
                     <span class="project-category" data-i18n="filter_web">Веб-разработка</span>
                     <h3>ИИ-консультант "Абитуриент"</h3>
-                    <p data-i18n="project_dashboard_desc">Голосовой ИИ-ассистент для приемной комиссии
-                        университета Жубанова</p>
+                    <p data-i18n="project_dashboard_desc">Голосовой ИИ-ассистент для приемной комиссии университета Жубанова</p>
                     <div class="project-tech">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">Vite</span>
@@ -336,123 +326,169 @@
     </section>
 
     <section class="team" id="team">
-        <h2 class="section-title"><span data-i18n="team_title1">Наша</span> <span class="gradient-text"
-                data-i18n="team_title2">команда</span></h2>
+        <h2 class="team-header-title">Наша <span class="gold">команда</span></h2>
         <div class="team-grid">
+            <!-- 1. CEO -->
             <div class="team-member">
+                <div class="team-bg-pattern bg-ceo"></div>
                 <div class="team-avatar">
-                    <img src="images/team1.jpg" alt="">
+                    <img src="images/team1.jpg" alt="Kirill">
                 </div>
+                <div class="team-status"><span class="status-dot status-green" style="background:#4CAF50"></span> Строит будущее</div>
                 <div class="team-name" data-i18n="team_member1_name">Кирилл Пилипенко</div>
                 <div class="team-role" data-i18n="team_member1_role">CEO & Основатель</div>
-                <p class="team-bio" data-i18n="team_member1_bio">Определяет вектор развития BENELUX и формирует команду
-                    экспертов для реализации инновационных проектов.</p>
-                <div class="team-social">
+                <div class="team-chips">
+                    <span class="team-chip">Strategy</span>
+                    <span class="team-chip">Leadership</span>
                 </div>
+                <p class="team-bio" data-i18n="team_member1_bio">Определяет вектор развития BENELUX и формирует команду экспертов.</p>
             </div>
+
+            <!-- 2. Co-Leader -->
             <div class="team-member">
+                <div class="team-bg-pattern bg-mgmt"></div>
                 <div class="team-avatar">
-                    <img src="images/team2.jpg" alt="">
+                    <img src="images/team2.jpg" alt="Erlan">
                 </div>
+                <div class="team-status"><span class="status-dot" style="background:#2196F3"></span> В переговорах</div>
                 <div class="team-name" data-i18n="team_member2_name">Ерлан Аймуканов</div>
                 <div class="team-role" data-i18n="team_member2_role">Со-руководитель</div>
-                <p class="team-bio" data-i18n="team_member2_bio">Отвечает за эффективность внутренних процессов и
-                    успешное завершение всех ключевых проектов.</p>
-                <div class="team-social">
+                <div class="team-chips">
+                    <span class="team-chip">Management</span>
+                    <span class="team-chip">Agile</span>
                 </div>
+                <p class="team-bio" data-i18n="team_member2_bio">Отвечает за эффективность внутренних процессов и успех проектов.</p>
             </div>
+
+            <!-- 3. PM -->
             <div class="team-member">
+                <div class="team-bg-pattern bg-pm"></div>
                 <div class="team-avatar">
-                    <img src="images/team10.jpg" alt="">
+                    <img src="images/team10.jpg" alt="Kalamsha">
                 </div>
-                <div class="team-name" data-i18n="team_member2_name">Каламша Баймухан</div>
-                <div class="team-role" data-i18n="team_member2_role">Project Manager</div>
-                <p class="team-bio" data-i18n="team_member2_bio">Координирует работу команды, управляет ресурсами и
-                    рисками, гарантируя выполнение задач в установленные сроки и с соблюдением стандартов качества.</p>
-                <div class="team-social">
+                <div class="team-status"><span class="status-dot" style="background:#9C27B0"></span> Планирует спринт</div>
+                <div class="team-name">Каламша Баймухан</div>
+                <div class="team-role">Project Manager</div>
+                <div class="team-chips">
+                    <span class="team-chip">Jira</span>
+                    <span class="team-chip">Risk Mgmt</span>
                 </div>
+                <p class="team-bio">Координирует работу команды и управляет ресурсами в срок.</p>
             </div>
-            <div class="team-member">
+
+            <!-- 4. Security (Active) -->
+            <div class="team-member active-team-card">
+                <div class="team-bg-pattern bg-sec"></div>
                 <div class="team-avatar">
-                    <img src="images/team3.jpg" alt="">
+                    <img src="images/team3.jpg" alt="Vladislav">
                 </div>
+                <div class="team-status"><span class="status-dot" style="background:#FF9800"></span> Сканирует сеть</div>
                 <div class="team-name" data-i18n="team_member3_name">Владислав Тугуши</div>
-                <div class="team-role" data-i18n="team_member3_role">Специалист по кибербезопасности</div>
-                <p class="team-bio" data-i18n="team_member3_bio">Обеспечивает комплексную защиту всех цифровых активов
-                    клиентов и инфраструктуры компании.</p>
-                <div class="team-social">
+                <div class="team-role" data-i18n="team_member3_role">Cybersecurity Expert</div>
+                <div class="team-chips">
+                    <span class="team-chip">Pentesting</span>
+                    <span class="team-chip">OSINT</span>
                 </div>
+                <p class="team-bio" data-i18n="team_member3_bio">Обеспечивает защиту всех цифровых активов клиентов.</p>
             </div>
+
+            <!-- 5. AI Specialist -->
             <div class="team-member">
+                <div class="team-bg-pattern bg-ai"></div>
                 <div class="team-avatar">
-                    <img src="images/team4.jpg" alt="">
+                    <img src="images/team4.jpg" alt="Nikita">
                 </div>
+                <div class="team-status"><span class="status-dot" style="background:#00BCD4"></span> Обучает LLM</div>
                 <div class="team-name" data-i18n="team_member4_name">Никита Мальцев</div>
-                <div class="team-role" data-i18n="team_member4_role">Специалист по ИИ</div>
-                <p class="team-bio" data-i18n="team_member4_bio">Разрабатывает и внедряет нейронные сети для оптимизации
-                    бизнес-процессов и создания новых продуктов.</p>
-                <div class="team-social">
+                <div class="team-role" data-i18n="team_member4_role">AI Specialist</div>
+                <div class="team-chips">
+                    <span class="team-chip">Python</span>
+                    <span class="team-chip">ML</span>
                 </div>
+                <p class="team-bio" data-i18n="team_member4_bio">Разрабатывает нейронные сети для оптимизации бизнеса.</p>
             </div>
+
+            <!-- 6. Mobilographer -->
             <div class="team-member">
+                <div class="team-bg-pattern bg-media"></div>
                 <div class="team-avatar">
-                    <img src="images/team5.jpg" alt="">
+                    <img src="images/team5.jpg" alt="Karabura">
                 </div>
+                <div class="team-status"><span class="status-dot" style="background:#E91E63"></span> В объективе</div>
                 <div class="team-name" data-i18n="team_member5_name">Карабура Айтжанов</div>
                 <div class="team-role" data-i18n="team_member5_role">Мобилограф</div>
-                <p class="team-bio" data-i18n="team_member5_bio">Создает высококачественный видеоконтент, отражающий
-                    экспертизу и жизнь команды BENELUX.</p>
-                <div class="team-social">
+                <div class="team-chips">
+                    <span class="team-chip">Video</span>
+                    <span class="team-chip">Cuts</span>
                 </div>
+                <p class="team-bio" data-i18n="team_member5_bio">Создает видеоконтент, отражающий жизнь команды.</p>
             </div>
+
+            <!-- 7. Designer -->
             <div class="team-member">
+                <div class="team-bg-pattern bg-design"></div>
                 <div class="team-avatar">
-                    <img src="images/team6.jpg" alt="">
+                    <img src="images/team6.jpg" alt="Mariam">
                 </div>
+                <div class="team-status"><span class="status-dot" style="background:#673AB7"></span> Рисует UX</div>
                 <div class="team-name" data-i18n="team_member6_name">Мариам Рогушева</div>
-                <div class="team-role" data-i18n="team_member6_role">Дизайнер</div>
-                <p class="team-bio" data-i18n="team_member6_bio">Превращает сложные идеи в интуитивно понятные и
-                    эстетически привлекательные интерфейсы.</p>
-                <div class="team-social">
+                <div class="team-role" data-i18n="team_member6_role">UI/UX Designer</div>
+                <div class="team-chips">
+                    <span class="team-chip">Figma</span>
+                    <span class="team-chip">Design</span>
                 </div>
+                <p class="team-bio" data-i18n="team_member6_bio">Превращает сложные идеи в эстетичные интерфейсы.</p>
             </div>
+
+            <!-- 8. QA -->
             <div class="team-member">
+                <div class="team-bg-pattern bg-qa"></div>
                 <div class="team-avatar">
-                    <img src="images/team7.jpg" alt="">
+                    <img src="images/team7.jpg" alt="Natalya">
                 </div>
+                <div class="team-status"><span class="status-dot" style="background:#f44336"></span> Ловит баги</div>
                 <div class="team-name" data-i18n="team_member7_name">Наталья Ищенко</div>
-                <div class="team-role" data-i18n="team_member7_role">Тестировщик</div>
-                <p class="team-bio" data-i18n="team_member7_bio">Обеспечивает безупречную работу продукта, выявляя и
-                    устраняя критические ошибки до релиза.</p>
-                <div class="team-social">
+                <div class="team-role" data-i18n="team_member7_role">QA Engineer</div>
+                <div class="team-chips">
+                    <span class="team-chip">Testing</span>
+                    <span class="team-chip">Bug Hunt</span>
                 </div>
+                <p class="team-bio" data-i18n="team_member7_bio">Обеспечивает безупречную работу продукта.</p>
             </div>
+
+            <!-- 9. SMM -->
             <div class="team-member">
+                <div class="team-bg-pattern bg-smm"></div>
                 <div class="team-avatar">
-                    <img src="images/team8.jpg" alt="">
+                    <img src="images/team8.jpg" alt="Saltanat">
                 </div>
+                <div class="team-status"><span class="status-dot" style="background:#3F51B5"></span> Пишет пост</div>
                 <div class="team-name" data-i18n="team_member8_name">Салтанат Еркингали</div>
-                <div class="team-role" data-i18n="team_member8_role">SMM-специалист</div>
-                <p class="team-bio" data-i18n="team_member8_bio">Управляет присутствием BENELUX в социальных сетях,
-                    строит сообщество и привлекает целевую аудиторию.</p>
-                <div class="team-social">
+                <div class="team-role" data-i18n="team_member8_role">SMM Specialist</div>
+                <div class="team-chips">
+                    <span class="team-chip">Social</span>
+                    <span class="team-chip">Content</span>
                 </div>
+                <p class="team-bio" data-i18n="team_member8_bio">Управляет присутствием в социальных сетях.</p>
             </div>
+
+            <!-- 10. Translator -->
             <div class="team-member">
+                <div class="team-bg-pattern bg-trans"></div>
                 <div class="team-avatar">
-                    <img src="images/team9.jpg" alt="">
+                    <img src="images/team9.jpg" alt="Aknur">
                 </div>
+                <div class="team-status"><span class="status-dot" style="background:#009688"></span> Переводит мир</div>
                 <div class="team-name" data-i18n="team_member9_name">Акнур Аскарова</div>
-                <div class="team-role" data-i18n="team_member9_role">Переводчик</div>
-                <p class="team-bio" data-i18n="team_member9_bio">Обеспечивает точную языковую адаптацию продуктов и
-                    коммуникаций, стирая границы между технологиями и глобальным рынком.</p>
-                <div class="team-social">
+                <div class="team-role" data-i18n="team_member9_role">Translator</div>
+                <div class="team-chips">
+                    <span class="team-chip">Languages</span>
+                    <span class="team-chip">Localization</span>
                 </div>
+                <p class="team-bio" data-i18n="team_member9_bio">Обеспечивает точную языковую адаптацию.</p>
             </div>
         </div>
     </section>
-
-
 
     <section class="about" id="about">
         <div class="about-content">
@@ -528,44 +564,47 @@
                 <!-- Right Column: FAQ -->
                 <div class="info-hub-column faq-column">
                     <h2 class="section-title text-left">
-                        <span data-i18n="faq_title">Вопросы</span>
+                        <span class="gradient-text" data-i18n="faq_title">Вопросы</span>
                     </h2>
                     <div class="faq-list-hub">
-                        <div class="faq-item-premium" onclick="toggleFaq(this)">
-                            <div class="faq-header-hub">
-                                <span data-i18n="faq_q1">Сроки разработки?</span>
-                                <i class="fas fa-plus"></i>
+                        <div class="faq-item">
+                            <div class="faq-header">
+                                <span class="faq-title" data-i18n="faq_q1">Сроки разработки?</span>
+                                <span class="faq-icon"><i class="fas fa-plus"></i></span>
                             </div>
-                            <div class="faq-body-premium">
-                                <div class="faq-body-content">
-                                    <p data-i18n="faq_a1">Лендинг от 7 дней, сложные системы от 1 месяца.</p>
-                                </div>
+                            <div class="faq-body">
+                                <p data-i18n="faq_a1">Лендинг от 7 дней, сложные системы от 1 месяца.</p>
                             </div>
                         </div>
-                        <div class="faq-item-premium" onclick="toggleFaq(this)">
-                            <div class="faq-header-hub">
-                                <span data-i18n="faq_q2">Есть ли поддержка?</span>
-                                <i class="fas fa-plus"></i>
+                        <div class="faq-item">
+                            <div class="faq-header">
+                                <span class="faq-title" data-i18n="faq_q2">Есть ли поддержка?</span>
+                                <span class="faq-icon"><i class="fas fa-plus"></i></span>
                             </div>
-                            <div class="faq-body-premium">
-                                <div class="faq-body-content">
-                                    <p data-i18n="faq_a2">Да, поддержка и мониторинг 24/7 после запуска.</p>
-                                </div>
+                            <div class="faq-body">
+                                <p data-i18n="faq_a2">Да, поддержка и мониторинг 24/7 после запуска.</p>
                             </div>
                         </div>
-                        <div class="faq-item-premium" onclick="toggleFaq(this)">
-                            <div class="faq-header-hub">
-                                <span data-i18n="faq_q3">Как платить?</span>
-                                <i class="fas fa-plus"></i>
+                        <div class="faq-item">
+                            <div class="faq-header">
+                                <span class="faq-title" data-i18n="faq_q3">Как платить?</span>
+                                <span class="faq-icon"><i class="fas fa-plus"></i></span>
                             </div>
-                            <div class="faq-body-premium">
-                                <div class="faq-body-content">
-                                    <p data-i18n="faq_a3">Работаем по системе 50/50 или по этапам (Milestones).</p>
-                                </div>
+                            <div class="faq-body">
+                                <p data-i18n="faq_a3">Работаем по системе 50/50 или по этапам (Milestones).</p>
                             </div>
                         </div>
                     </div>
+                    <div class="faq-cta-block">
+                        <div class="faq-cta-icon"><i class="fas fa-comments"></i></div>
+                        <div class="faq-cta-text">
+                            <h4 class="gradient-text">Остались вопросы?</h4>
+                            <p>Напишите нам — ответим в течение часа</p>
+                        </div>
+                        <a href="#contact" class="faq-cta-btn">Связаться <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -576,26 +615,26 @@
             <div class="testimonial-card-premium">
                 <div class="testimonial-content">
                     <i class="fas fa-quote-left quote-icon"></i>
-                    <p data-i18n="testimonial1_text">Benelux превзошли все наши ожидания! Они создали платформу для нашего финтех-стартапа за 3 месяца. Профессионализм, внимание к деталям и отличная коммуникация на протяжении всего проекта.</p>
+                    <p data-i18n="testimonial1_text">Сайт оставляет очень хорошее впечатление: современный дизайн, понятная структура и удобная навигация. Информация изложена чётко и логично, легко найти нужные разделы. Видно, что сайт продуман с точки зрения пользователя. При небольшом усилении продающих акцентов и доработке деталей можно смело довести до идеального уровня.</p>
                 </div>
                 <div class="testimonial-author">
-                    <div class="author-avatar-premium">АК</div>
+                    <div class="author-avatar-premium">ГК</div>
                     <div class="author-info">
-                        <h4 data-i18n="testimonial1_name">Алексей Ковалёв</h4>
-                        <span class="author-role">CEO, TechFlow</span>
+                        <h4 data-i18n="testimonial1_name">Гульдара Кенжегара</h4>
+                        <span class="author-role">Эксперт по маркетиингу, Kasip</span>
                     </div>
                 </div>
             </div>
             <div class="testimonial-card-premium">
                 <div class="testimonial-content">
                     <i class="fas fa-quote-left quote-icon"></i>
-                    <p data-i18n="testimonial2_text">Работа с командой Benelux - это настоящее удовольствие. Они не просто выполнили техническое задание, а предложили инновационные решения, которые значительно улучшили наш продукт.</p>
+                    <p data-i18n="testimonial2_text">Хочется выразить благодарность одному из разработчиков данной компании за профессионализм и отличную работу. Он с нуля создал сайт, который не только выглядит как современный лендинг, но и включает полноценную образовательную платформу. Всё работает стабильно: личные кабинеты, загрузка видеоуроков и материалов, отслеживание прогресса пользователей. Работать с ним было легко и комфортно — всегда на связи и решает задачи быстро. Спасибо за качественный результат!</p>
                 </div>
                 <div class="testimonial-author">
-                    <div class="author-avatar-premium">МС</div>
+                    <div class="author-avatar-premium">МБ</div>
                     <div class="author-info">
-                        <h4 data-i18n="testimonial2_name">Мария Смирнова</h4>
-                        <span class="author-role">Product Manager, GlobalRetail</span>
+                        <h4 data-i18n="testimonial2_name">Меруерт Бассен</h4>
+                        <span class="author-role">Со-руководитель и финансист, Kasip</span>
                     </div>
                 </div>
             </div>
@@ -702,14 +741,14 @@
         <div class="footer-container">
             <div class="footer-info">
                 <div class="logo footer-logo">BENELUX</div>
-                <p class="footer-description">
+                <p class="footer-description" data-i18n="footer_desc">
                     Мы создаем цифровые решения будущего. Инновационный подход к каждому проекту, от концепции до
                     реализации.
                 </p>
             </div>
 
             <div class="footer-links">
-                <h4>Навигация</h4>
+                <h4 data-i18n="footer_nav_title">Навигация</h4>
                 <ul>
                     <li><a href="#hero">Главная</a></li>
                     <li><a href="#services">Услуги</a></li>
@@ -720,7 +759,7 @@
             </div>
 
             <div class="footer-links">
-                <h4>Услуги</h4>
+                <h4 data-i18n="footer_services_title">Услуги</h4>
                 <ul>
                     <li><a href="#services">Веб-разработка</a></li>
                     <li><a href="#services">Мобильные приложения</a></li>
@@ -730,7 +769,7 @@
             </div>
 
             <div class="footer-links">
-                <h4>Связаться</h4>
+                <h4 data-i18n="footer_contact_title">Связаться</h4>
                 <div class="footer-contact-item">
                     <i class="fas fa-envelope"></i>
                     <span>benelux.aktobe@bk.ru</span>
@@ -783,3 +822,4 @@
 </body>
 
 </html>
+

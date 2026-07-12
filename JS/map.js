@@ -18,11 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const cities = [
         {
             name: 'Актобе',
-            coords: [50.283333, 57.166667],
+            coords: [50.293341, 57.157939],
             primary: true,
             address: 'ул. Абулхайр хана 52А',
             phone: '+7 778 233 8539',
-            photo: 'images/aktobe.jpg'
+            photo: 'images/aktobe.jpg',
+            dgUrl: 'https://2gis.kz/aktobe/search/aqtobe%20it%20hub/firm/70000001077346282/57.157939%2C50.293341?m=57.15797%2C50.293331%2F17.45'
         },
         {
             name: 'Костанай',
@@ -30,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
             primary: true,
             address: 'пр. Абая 28/1',
             phone: '+7 778 233 8539',
-            photo: 'images/kostanai.jpg'
+            photo: 'images/kostanai.jpg',
+            dgUrl: 'https://go.2gis.com/fy0XB'
         },
         { name: 'Астана', coords: [51.160523, 71.470356], primary: false, address: '', phone: '', photo: '' },
         { name: 'Алматы', coords: [43.238293, 76.945465], primary: false, address: '', phone: '', photo: '' },
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const cardName = document.getElementById('cityCardName');
     const cardAddress = document.getElementById('cityCardAddress');
     const cardPhone = document.getElementById('cityCardPhone');
+    const cardDG = document.getElementById('cityCardDG');
     const cardPhoto = document.getElementById('cityCardPhoto');
     const cardFallback = document.getElementById('cityCardFallback');
     const closeBtn = document.getElementById('cityCardClose');
@@ -67,6 +70,14 @@ document.addEventListener('DOMContentLoaded', function () {
             cardPhone.style.display = 'block';
         } else {
             cardPhone.style.display = 'none';
+        }
+
+        // 2GIS Button
+        if (city.dgUrl) {
+            cardDG.innerHTML = `<a href="${city.dgUrl}" target="_blank" class="btn-2gis"><i class="fas fa-route"></i> <span>Найти в 2GIS</span></a>`;
+            cardDG.style.display = 'block';
+        } else {
+            cardDG.style.display = 'none';
         }
 
         // Фото или fallback
